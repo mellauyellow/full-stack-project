@@ -22,8 +22,9 @@ and sufficient CSS styling:
 - [ ] Search/filters
 - [ ] Reviews
 - [ ] Map
-- [ ] **Bonus:** Trending Words on Neighborhood Pages, User Profile, User
-Favorites (neighborhoods), Marking Reviews as 'useful/funny/cool'
+- [ ] **Bonus:** User Profile
+- [ ] **Bonus:** User Favorites (neighborhoods)
+- [ ] **Bonus:** Marking Reviews as 'useful/funny/cool'
 
 ## Design Docs
 * [View Wireframes][wireframes]
