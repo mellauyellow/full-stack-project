@@ -17,11 +17,11 @@ and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] A new production README, replacing this README
 - [ ] Neighborhood Page
-- [ ] Search/filters
 - [ ] Reviews
+- [ ] Search/filters
 - [ ] Map
+- [ ] A new production README, replacing this README
 - [ ] **Bonus:** User Profile
 - [ ] **Bonus:** User Favorites (neighborhoods)
 - [ ] **Bonus:** Marking Reviews as 'useful/funny/cool'
@@ -45,29 +45,29 @@ and sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Region and Neighborhood Models, API, and components (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Neighborhood pages can be rendered with all appropriate content.
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: Reviews, API, and components (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Reviews can be created, read, edited and destroyed.
 
-### Phase 4: Tags (1 days)
+### Phase 4: Search/Filters (2 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Regions can be filtered to show only select neighborhoods, and
+search results are rendered.
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+### Phase 5: Maps (2 days)
 
-**objective:** Allow rich text editing of notes.
+**Objective:** Both search results and neighborhood pages show the appropriate
+level of detail in their map window.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: Allow Complex Styling (1 days)
 
-**objective:** Add infinite scroll to Notes Index
+**objective:** Additional design touches across all pages.
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] User profile page
+- [ ] User favorites
+- [ ] Marking reviews as funny/useful/cool
