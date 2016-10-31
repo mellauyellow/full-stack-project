@@ -45,7 +45,6 @@ column name      | data type | details
 id               | integer   | not null, primary key
 url              | string    | not null, indexed, unique
 review_id        | integer   | not null, foreign_key (references reviews), indexed
-neighborhood_id  | integer   | not null, foreign_key (references neighborhoods), indexed
 region_rep       | boolean   | not null
 neighborhood_rep | boolean   | not null
 
