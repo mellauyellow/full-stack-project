@@ -22,6 +22,8 @@ and sufficient CSS styling:
 - [ ] Search/filters
 - [ ] Maps
 - [ ] A new production README, replacing this README
+- [ ] **Bonus:** Regions index on homepage
+- [ ] **Bonus:** More advanced search based on similar neighborhoods
 - [ ] **Bonus:** User Profile
 - [ ] **Bonus:** User Favorites (neighborhoods)
 - [ ] **Bonus:** Marking Reviews as 'useful/funny/cool'
@@ -68,6 +70,8 @@ level of detail in their map window.
 **objective:** Additional design touches across all pages.
 
 ### Bonus Features (TBD)
+- [ ] Regions index on homepage
+- [ ] More advanced search based on similar neighborhoods
 - [ ] User profile page
 - [ ] User favorites
 - [ ] Marking reviews as funny/useful/cool

@@ -22,12 +22,12 @@
 ### Neighborhoods
 
 - `GET /api/neighborhoods`
-- `GET /api/neighborhoods/:id`
+- `GET /api/neighborhoods/:name`
 
 ### Reviews
 
-- `GET /api/neighborhoods/:id/reviews`
+- `GET /api/neighborhoods/:name/reviews`
 - `GET /api/reviews/:id`
-- `POST /api/reviews`
+- `POST /api/neighborhoods/:name/reviews`
 - `PATCH /api/reviews/:id`
 - `DELETE /api/reviews/:id`
