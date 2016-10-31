@@ -3,7 +3,7 @@
 **AppContainer**
 - Header
 - LoginForm
-- NeighborhoodSearchDropdown
+- RegionSearchDropdown
 - Footer
 
 
@@ -33,6 +33,7 @@
 **ReviewFormContainer**
 - ReviewFormHeader
 - ReviewForm
+- UploadPhotoForm
 
 **UserProfileContainer**
 - UserProfileHeader
