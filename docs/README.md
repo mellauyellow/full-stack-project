@@ -20,7 +20,7 @@ and sufficient CSS styling:
 - [ ] Neighborhood Page
 - [ ] Reviews
 - [ ] Search/filters
-- [ ] Map
+- [ ] Maps
 - [ ] A new production README, replacing this README
 - [ ] **Bonus:** User Profile
 - [ ] **Bonus:** User Favorites (neighborhoods)

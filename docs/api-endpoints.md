@@ -19,10 +19,6 @@
 - `DELETE /api/session`
 - `GET /api/session`
 
-### Regions
-
-- `GET /api/regions`
-
 ### Neighborhoods
 
 - `GET /api/neighborhoods`
@@ -30,7 +26,7 @@
 
 ### Reviews
 
-- `GET /api/reviews`
+- `GET /api/neighborhoods/:id/reviews`
 - `GET /api/reviews/:id`
 - `POST /api/reviews`
 - `PATCH /api/reviews/:id`
