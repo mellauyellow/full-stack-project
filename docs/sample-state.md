@@ -2,7 +2,11 @@
 {
   currentUser: {
     id: 1,
-    username: "app-academy"
+    username: "app-academy",
+    first_name: "Melissa",
+    last_name: "Lau",
+    zip_code: 94110,
+    profile_pic_url: 'assets/pic.jpg'
   },
   forms: {
     signUp: {errors: []},
