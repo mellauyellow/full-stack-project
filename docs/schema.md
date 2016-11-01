@@ -30,15 +30,9 @@ center_long        | float     | not null
 walk_score         | integer   | not null
 transit_score      | integer   | not null
 cost_of_living     | integer   | not null
-architecture_type  | integer   | not null
+housing_type       | string    | not null
+architecture_type  | string   |
 region_id          | integer   | not null, foreign_key (references regions), indexed
-sf_id              | integer   | not null, foreign_key (references sf_neighborhoods), indexed
-
-## sf_neighborhoods
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-name            | string    | not null
 
 ## images
 column name      | data type | details
