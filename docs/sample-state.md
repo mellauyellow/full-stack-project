@@ -1,17 +1,18 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "app-academy",
-    first_name: "Melissa",
-    last_name: "Lau",
-    zip_code: 94110,
-    profile_pic_url: 'assets/pic.jpg'
-  },
-  forms: {
-    signUp: {errors: []},
-    login: {errors: []},
-    createReview: {errors: ["body can't be blank", "title can't be blank"]}
+  session: {
+    currentUser: {
+      id: 1,
+      username: "app-academy",
+      first_name: "Melissa",
+      last_name: "Lau",
+      zip_code: 94110,
+      profile_pic_url: 'assets/pic.jpg'
+    },
+    errors: {
+      signUp: [],
+      login: []
+    }
   },
   regions: [
     {id: 1, name: "San Francisco", state: "CA", images: []}
