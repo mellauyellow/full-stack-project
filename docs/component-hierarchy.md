@@ -13,7 +13,7 @@
   + RegionItem
 
 **AuthFormContainer**
-- SignUpForm
+- SignupForm
   + Errors
 
 **SearchResultsContainer**
