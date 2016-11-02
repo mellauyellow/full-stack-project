@@ -117,9 +117,12 @@ nav {
   cursor: pointer;
 }
 
+/*MODAL ERRORS*/
+
 .ReactModal__Content li {
-  font-size: 14px;
+  font-size: 13px;
   color: #d36778;
+  font-weight: 300;
 }
 
 /*LOGIN FORM*/
@@ -232,4 +235,34 @@ nav {
 
 .signup-form-login a:visited {
   color: silver;
+}
+
+/*LOGGED-IN HEADER*/
+
+.auth-logged-in {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.auth-logged-in > img {
+  height: 35px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  margin: 0px 5px;
+}
+
+.auth-logged-in > h4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+.auth-logged-in > button {
+  margin: 0px 5px;
+  border: none;
+  background-color: white;
+  font-size: 12px;
+  color: #317cff;
+  font-weight: 300;
 }

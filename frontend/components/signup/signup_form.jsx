@@ -16,6 +16,7 @@ class SignupForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleChange(field) {
@@ -39,16 +40,25 @@ class SignupForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
-  render() {
-    let errors;
-
+  renderErrors() {
     if (this.props.errors) {
-      errors = Object.keys(this.props.errors).map((field, idx) => (
-        <li key={idx}>{field} {this.props.errors[field]}</li>
-      ));
+      let errorFields = Object.keys(this.props.errors);
+      let errors = errorFields.map((field, idx) => {
+        if (field.indexOf("_") > -1) {
+          let newField = field.replace("_", " ");
+          return (<li key={idx}>{newField} {this.props.errors[field]}</li>);
+        } else {
+          return (<li key={idx}>{field} {this.props.errors[field]}</li>);
+        }
+      });
+      return errors;
     } else {
-      errors = <li></li>;
+      return <li></li>;
     }
+  }
+
+  render() {
+    let errors = this.renderErrors();
 
     return (
       <div className="signup-form">

@@ -40,7 +40,7 @@ class Auth extends React.Component {
       return (
         <div className="auth-logged-in">
           <img src={this.props.currentUser.profile_pic_url}></img>
-          <h4>{this.props.currentUser.username}</h4>
+          <h4>{this.props.currentUser.first_name} {this.props.currentUser.last_name.slice(0, 1)}.</h4>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
       );
