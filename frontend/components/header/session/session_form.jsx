@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
         <li key={idx}>{error}</li>
       ));
     } else {
-      errors = <br></br>;
+      errors = <li></li>;
     }
 
     return (

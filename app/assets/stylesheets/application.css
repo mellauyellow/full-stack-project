@@ -34,7 +34,7 @@ body {
 }
 
 .app {
-  border-bottom: 1px solid silver;
+  /*border-bottom: 1px solid silver;*/
 }
 
 /*HEADER*/
@@ -116,6 +116,12 @@ nav {
   color: grey;
   cursor: pointer;
 }
+
+.ReactModal__Content li {
+  font-size: 14px;
+  color: #d36778;
+}
+
 /*LOGIN FORM*/
 
 .login-form {
@@ -128,7 +134,7 @@ nav {
 .login-form h2 {
   margin: 20px 0px;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .login-form > form {
@@ -140,7 +146,7 @@ nav {
   margin: 10px;
 }
 
-.login-form input[type=text], input[type=password] {
+.login-form input[type=text], .login-form input[type=password] {
   width: 250px;
   font-size: 16px;
   padding: 10px;
@@ -164,6 +170,66 @@ nav {
   color: silver;
 }
 
+.login-form-signup a:link {
+  color: silver;
+}
+
 .login-form-signup a:visited {
+  color: silver;
+}
+
+/*SIGNUP FORM*/
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form h2 {
+  margin: 20px 0px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.signup-form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form input {
+  margin: 10px;
+}
+
+.signup-form input[type=text], .signup-form input[type=password] {
+  width: 250px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid silver;
+}
+
+.signup-form input[type=submit] {
+  align-self: flex-end;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  background: #317cff;
+  color: white;
+  border-radius: 3px;
+}
+
+.signup-form-login {
+  margin-top: 30px;
+  font-size: 11px;
+  color: silver;
+}
+
+.signup-form-login a:link {
+  color: silver;
+}
+
+.signup-form-login a:visited {
   color: silver;
 }
