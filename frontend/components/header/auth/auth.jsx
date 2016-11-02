@@ -5,32 +5,6 @@ import ModalStyle from '../../modal_style';
 import SessionFormContainer from '../session/session_form_container';
 import SignupFormContainer from '../../signup/signup_form_container';
 
-// const Auth = ({currentUser, logout}) => {
-//   if (currentUser.username) {
-//     return (
-//       <div className="auth-logged-in">
-//         <img src={currentUser.profile_pic_url}></img>
-//         <h4>{currentUser.username}</h4>
-//         <button onClick={logout}>Log Out</button>
-//       </div>
-//     );
-//   } else {
-//     return (
-//       <div className="auth-not-logged-in">
-//         <div className="guest-link">
-//           <Link to="">Guest</Link>
-//         </div>
-//         <div className="signup-link">
-//           <Link to="/signup">Sign Up</Link>
-//         </div>
-//         <div className="login-link">
-//           <Link to="/login">Log In</Link>
-//         </div>
-//       </div>
-//     );
-//   }
-// };
-
 class Auth extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +26,7 @@ class Auth extends React.Component {
   onModalClose() {
     this.setState({modalOpen: false});
     ModalStyle.content.opacity = 0;
+    this.props.clearErrors();
   }
 
   onModalOpen() {
