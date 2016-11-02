@@ -34,7 +34,7 @@ class Auth extends React.Component {
   }
 
   render() {
-    let component = (this.state.signIn) ? <SessionFormContainer /> : <SignupFormContainer />;
+    let component = (this.state.signIn) ? <SessionFormContainer closeModal={this.onModalClose}/> : <SignupFormContainer closeModal={this.onModalClose}/>;
 
     if (this.props.currentUser.username) {
       return (

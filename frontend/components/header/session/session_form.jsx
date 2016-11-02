@@ -31,6 +31,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.closeModal();
+  }
+
   componentDidUpdate() {
     this.redirectIfLoggedIn();
   }

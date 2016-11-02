@@ -25,7 +25,9 @@ const SessionReducer = (oldState = _nullState, action) => {
     case LOGOUT:
       return _nullState;
     case CLEAR_ERRORS:
-      return _nullState;
+      newState = merge({}, oldState);
+      newState.errors = [];
+      return newState;
     default:
       return oldState;
   }

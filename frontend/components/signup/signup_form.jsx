@@ -40,6 +40,10 @@ class SignupForm extends React.Component {
     this.redirectIfLoggedIn();
   }
 
+  componentWillUnmount() {
+    this.props.closeModal();
+  }
+
   renderErrors() {
     if (this.props.errors) {
       let errorFields = Object.keys(this.props.errors);
