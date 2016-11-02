@@ -10,7 +10,9 @@ const App = ({children}) => (
       </div>
       <AuthContainer />
     </nav>
-    {children}
+    <div className="children">
+      {children}
+    </div>
   </div>
 );
 

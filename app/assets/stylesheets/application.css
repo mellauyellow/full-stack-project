@@ -34,8 +34,10 @@ body {
 }
 
 .app {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid silver;
 }
+
+/*HEADER*/
 
 nav {
   max-width: 900px;
@@ -53,26 +55,115 @@ nav {
   width: 40px;
   height: 40px;
   padding: 10px 5px;
+  margin-left: 10px;
 }
 
 .company-name {
   padding: 10px 5px;
   font-weight: 500;
   font-size: 24px;
+  color: #317cff;
 }
 
 .auth-not-logged-in {
   display: flex;
-  align-items: center
+  align-items: center;
+  margin-right: 10px;
 }
 
 .auth-not-logged-in > div {
-  border: solid black 1px;
-  border-radius: 5px;
+  margin: 0px 5px;
+  display: flex;
 }
 
 .auth-not-logged-in a {
   text-decoration: none;
-  line-height: 1;
-  padding: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  align-content: center;
+  border: solid 2px white;
+}
+
+.auth-not-logged-in a:hover {
+  color: white;
+  background-color: #317cff;
+  border: solid 2px #317cff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.guest-link > a {
+  border: solid 2px silver;
+  border-radius: 3px;
+}
+
+.guest-link > a:hover {
+  border: solid 2px black;
+  background-color: white;
+  color: black;
+}
+
+/*MODAL*/
+.ReactModal__Content .close {
+  font-size: 20px;
+  color: silver;
+  padding: 0px;
+}
+
+.ReactModal__Content .close:hover {
+  color: grey;
+  cursor: pointer;
+}
+/*LOGIN FORM*/
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form h2 {
+  margin: 20px 0px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.login-form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin: 10px;
+}
+
+.login-form input[type=text], input[type=password] {
+  width: 250px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid silver;
+}
+
+.login-form input[type=submit] {
+  align-self: flex-end;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  background: #317cff;
+  color: white;
+  border-radius: 3px;
+}
+
+.login-form-signup {
+  margin-top: 30px;
+  font-size: 11px;
+  color: silver;
+}
+
+.login-form-signup a:visited {
+  color: silver;
 }

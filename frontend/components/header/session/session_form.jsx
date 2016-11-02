@@ -48,6 +48,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="login-form">
+        <h2>Log in</h2>
         <ul className="errors">
           {errors}
         </ul>
@@ -57,7 +58,7 @@ class SessionForm extends React.Component {
           <input type="submit" value="Log in"></input>
         </form>
         <div className="login-form-signup">
-          <p>Don't have an account?</p>
+          <small>Don't have an account? &nbsp;</small>
           <Link to='/signup'>Sign up</Link>
         </div>
       </div>

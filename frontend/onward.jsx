@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import * as actions from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
+import Modal from 'react-modal';
 
 window.signup = actions.signup;
 window.login = actions.login;
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
+  Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
