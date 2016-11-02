@@ -4,10 +4,9 @@ import * as actions from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
+import * as apiActions from './util/session_api_util';
 
-window.signup = actions.signup;
-window.login = actions.login;
-window.logout = actions.logout;
+window.login = apiActions.login;
 
 
 document.addEventListener('DOMContentLoaded', () => {

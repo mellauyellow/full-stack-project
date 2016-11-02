@@ -1,20 +1,17 @@
 ## Component Hierarchy
 
 **AppContainer**
-- Header
-- LoginForm
-- RegionSearchDropdown
-- Footer
+- Auth
+  + SessionForm
+  + SignupForm
+    - Errors
+- RegionSearchDropdown (TBD)
+- Footer (TBD)
 
-
-**HomeContainer**
-- HomepageImage
-- RegionIndex
-  + RegionItem
-
-**AuthFormContainer**
-- SignupForm
-  + Errors
+**SplashContainer**
+- SplashImage
+- RegionIndex (TBD)
+  + RegionItem (TBD)
 
 **SearchResultsContainer**
 - SearchForm
@@ -45,8 +42,6 @@
 |Path   | Component   |
 |-------|-------------|
 | "/" | "AppContainer" |
-| "/home" | "HomeContainer" |
-| "/sign-up" | "AuthFormContainer" |
 | "/search-results" | "SearchResultsContainer" |
 | "/neighborhood/:neighborhoodId" | "NeighborhoodContainer" |
 | "/neighborhood/:neighborhoodId/new-review" | "ReviewFormContainer" |

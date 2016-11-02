@@ -15,6 +15,7 @@ class Auth extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   handleClick(bool) {
@@ -33,6 +34,10 @@ class Auth extends React.Component {
     ModalStyle.content.opacity = 100;
   }
 
+  handleGuestLogin() {
+    this.props.login({username: "guest", password: "password"});
+  }
+
   render() {
     let component = (this.state.signIn) ? <SessionFormContainer closeModal={this.onModalClose}/> : <SignupFormContainer closeModal={this.onModalClose}/>;
 
@@ -48,7 +53,7 @@ class Auth extends React.Component {
       return (
         <div className="auth-not-logged-in">
           <div className="guest-link">
-            <Link to="">Guest</Link>
+            <Link onClick={this.handleGuestLogin}>Guest</Link>
           </div>
           <div className="signup-link">
             <Link onClick={this.handleClick(false)}>Sign Up</Link>

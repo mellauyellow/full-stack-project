@@ -31,7 +31,7 @@ walk_score         | integer   | not null
 transit_score      | integer   | not null
 cost_of_living     | integer   | not null
 housing_type       | string    | not null
-architecture_type  | string   |
+architecture_type  | string    |
 region_id          | integer   | not null, foreign_key (references regions), indexed
 
 ## images

@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101165819) do
+ActiveRecord::Schema.define(version: 20161102211459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "neighborhoods", force: :cascade do |t|
+    t.string   "name",              null: false
+    t.float    "center_lat",        null: false
+    t.float    "center_long",       null: false
+    t.integer  "walk_score",        null: false
+    t.integer  "transit_score",     null: false
+    t.integer  "cost_of_living",    null: false
+    t.string   "housing_type",      null: false
+    t.string   "architecture_type"
+    t.integer  "region_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "neighborhoods", ["region_id"], name: "index_neighborhoods_on_region_id", using: :btree
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "state",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "regions", ["name"], name: "index_regions_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

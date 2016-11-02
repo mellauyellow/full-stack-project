@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
       last_name: "",
       zip_code: ""
     };
-    console.log(props);
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);

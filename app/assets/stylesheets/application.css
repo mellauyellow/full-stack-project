@@ -29,6 +29,22 @@ ol, ul {
   list-style: none;
 }
 
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }
@@ -44,6 +60,7 @@ nav {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  padding: 5px 0px;
 }
 
 .logo-and-name {
@@ -249,13 +266,12 @@ nav {
   height: 35px;
   border: 1px solid silver;
   border-radius: 3px;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 
 .auth-logged-in > h4 {
   font-size: 14px;
   font-weight: 400;
-  margin: 0px 5px;
 }
 
 .auth-logged-in > button {
@@ -265,4 +281,39 @@ nav {
   font-size: 12px;
   color: #317cff;
   font-weight: 300;
+}
+
+.auth-logged-in > button:hover {
+  cursor: pointer;
+  color: #5533ff;
+}
+
+/*SPLASH*/
+
+.background_image {
+  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+  background-size: cover;
+  height: 500px;
+  color: white;
+}
+
+.background_image section {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background_image h1 {
+  font-weight: 500;
+  padding: 50px 0px 15px 0px;
+  text-shadow: 0px 0px 1px #000000;
+}
+
+.background_image h2 {
+  font-weight: 400;
+  /*padding: 15px;*/
+  text-shadow: 0px 0px 2px #000000;
 }
