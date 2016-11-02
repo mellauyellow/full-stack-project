@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, img,
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, a,
 small, strike, strong, ol, ul, li, form, label, article,
 aside, figcaption, footer, header, nav, section {
   margin: 0;
@@ -27,4 +27,52 @@ aside, figcaption, footer, header, nav, section {
 
 ol, ul {
   list-style: none;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.app {
+  border-bottom: 1px solid grey;
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-and-name {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  padding: 10px 5px;
+}
+
+.company-name {
+  padding: 10px 5px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.auth-not-logged-in {
+  display: flex;
+  align-items: center
+}
+
+.auth-not-logged-in > div {
+  border: solid black 1px;
+  border-radius: 5px;
+}
+
+.auth-not-logged-in a {
+  text-decoration: none;
+  line-height: 1;
+  padding: 5px;
 }
