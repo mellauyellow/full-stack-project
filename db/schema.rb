@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102211459) do
+ActiveRecord::Schema.define(version: 20161102234159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.string   "url",              null: false
+    t.integer  "review_id",        null: false
+    t.boolean  "region_rep",       null: false
+    t.boolean  "neighborhood_rep", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "images", ["review_id"], name: "index_images_on_review_id", using: :btree
+  add_index "images", ["url"], name: "index_images_on_url", unique: true, using: :btree
 
   create_table "neighborhoods", force: :cascade do |t|
     t.string   "name",              null: false
@@ -25,12 +37,10 @@ ActiveRecord::Schema.define(version: 20161102211459) do
     t.integer  "cost_of_living",    null: false
     t.string   "housing_type",      null: false
     t.string   "architecture_type"
-    t.integer  "region_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "region_id",         null: false
   end
-
-  add_index "neighborhoods", ["region_id"], name: "index_neighborhoods_on_region_id", using: :btree
 
   create_table "regions", force: :cascade do |t|
     t.string   "name",       null: false
@@ -40,6 +50,22 @@ ActiveRecord::Schema.define(version: 20161102211459) do
   end
 
   add_index "regions", ["name"], name: "index_regions_on_name", unique: true, using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "body",              null: false
+    t.boolean  "good_for_pets"
+    t.boolean  "good_for_bikes"
+    t.boolean  "good_for_singles"
+    t.boolean  "good_for_families"
+    t.boolean  "street_parking"
+    t.integer  "user_id",           null: false
+    t.integer  "neighborhood_id",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "reviews", ["neighborhood_id"], name: "index_reviews_on_neighborhood_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

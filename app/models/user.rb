@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
 
+  has_many :reviews,
+    class_name: :Review,
+    foreign_key: :user_id,
+    primary_key: :id
+
   attr_reader :password
 
   after_initialize :ensure_session_token

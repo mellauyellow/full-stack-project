@@ -5,9 +5,9 @@ import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
 import * as apiActions from './util/session_api_util';
+import * as regionsActions from './actions/regions_actions';
 
-window.login = apiActions.login;
-
+window.fetchRegions = regionsActions.fetchRegions;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

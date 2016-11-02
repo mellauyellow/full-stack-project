@@ -47,7 +47,6 @@ neighborhood_rep | boolean   | not null
 column name      | data type | details
 -----------------|-----------|-----------------------
 id               | integer   | not null, primary key
-title            | string    | not null
 body             | text      | not null
 good_for_families| boolean   |
 good_for_singles | boolean   |
