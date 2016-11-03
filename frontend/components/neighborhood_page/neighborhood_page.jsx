@@ -8,7 +8,6 @@ class NeighborhoodPage extends React.Component {
   constructor(props) {
     super(props);
     this.props.fetchNeighborhood(1);
-    console.log(props);
   }
 
   render() {

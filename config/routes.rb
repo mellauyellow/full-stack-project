@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       resources :neighborhoods, only: [:index]
     end
 
-    resources :neighborhoods, only: [:show]
+    resources :neighborhoods, only: [:show] do
+      resources :reviews, only: [:index]
+    end
   end
+
   root to: 'static_pages#root'
 end
