@@ -180,3 +180,36 @@ neighborhood27 = Neighborhood.create(name: "East Village", region_id: 2, center_
 neighborhood28 = Neighborhood.create(name: "Garment District", region_id: 2, center_lat: 40.7541165, center_long: -73.9950564, walk_score: 99, transit_score: 100, housing_type: "blank", architecture_type: "blank", cost_of_living: 1)
 neighborhood29 = Neighborhood.create(name: "Financial District", region_id: 2, center_lat: 40.708831, center_long: -74.0166889, walk_score: 100, transit_score: 100, housing_type: "blank", architecture_type: "blank", cost_of_living: 1)
 neighborhood30 = Neighborhood.create(name: "Flatiron", region_id: 2, center_lat: 40.7415872, center_long: -73.9931452, walk_score: 100, transit_score: 100, housing_type: "blank", architecture_type: "blank", cost_of_living: 1)
+
+image1 = Image.create(caption: "Dolores Park on a warm weekend day", user_id: 5, review_id: 1, region_rep: false, neighborhood_rep: true, neighborhood_id: 1, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213159/dolores_park_torbakhopper.0_g0jkey.jpg")
+image2 = Image.create(caption: "South Van Ness", user_id: 5, review_id: 1, region_rep: false, neighborhood_rep: false, neighborhood_id: 1, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213189/mission-district-san-francisco-hipster_gbk8jb.jpg")
+image3 = Image.create(caption: "Cute shops on 24th!", user_id: 8, review_id: 2, region_rep: false, neighborhood_rep: true, neighborhood_id: 2, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213357/post-65229_uhbwl0.png")
+image4 = Image.create(caption: "My friends call this the Green Palace of Noe", user_id: 1, region_rep: false, neighborhood_rep: false, neighborhood_id: 2, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213357/post-65164_was7em.png")
+image5 = Image.create(caption: "Literally.", user_id: 8, review_id: 2, region_rep: false, neighborhood_rep: false, neighborhood_id: 2, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213356/Noe_Valley_San_Francisco_2_ovboeo.jpg")
+image6 = Image.create(caption: "<3", user_id: 9, review_id: 3, region_rep: false, neighborhood_rep: true, neighborhood_id: 1, url: "http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_1000/v1478213360/100_2186_ykqnlt.jpg")
+image7 = Image.create(caption: "The murals are one of my fave things about the Mission", user_id: 9, review_id: 3, region_rep: false, neighborhood_rep: false, neighborhood_id: 1, url: "http://res.cloudinary.com/mellauyellow/image/upload/v1478213353/14hours600_wum1ua.jpg")
+
+review1 = Review.create(body: "I've lived in the Mission for 2 years and I can honestly say it's one of the best places I've lived in my life. So convenient to everything - bars, restaurants, BART, etc. Highly recommended for foodies as well.",
+                        good_for_pets: true,
+                        good_for_bikes: true,
+                        good_for_singles: true,
+                        good_for_families: false,
+                        street_parking: false,
+                        user_id: 5,
+                        neighborhood_id: 1)
+review2 = Review.create(body: "Noe is the nice compromise for people who are looking to still be walking distance to stores/bars/restaurants, but want a little peace and quiet on their street. It's so dead at night that I can hear my footsteps echo in the streets when I walk. I love that, but you may not.",
+                        good_for_pets: true,
+                        good_for_bikes: false,
+                        good_for_singles: false,
+                        good_for_families: true,
+                        street_parking: true,
+                        user_id: 8,
+                        neighborhood_id: 2)
+review3 = Review.create(body: "The Mission used to be full of culture, but over the last few years it's become overrun by rich techies who live their lives through mobile apps. It's gotten so expensive that my family can no longer afford to live here. Good riddance!",
+                        good_for_pets: true,
+                        good_for_bikes: true,
+                        good_for_singles: true,
+                        good_for_families: false,
+                        street_parking: false,
+                        user_id: 9,
+                        neighborhood_id: 1)
