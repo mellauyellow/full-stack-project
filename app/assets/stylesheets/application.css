@@ -291,7 +291,8 @@ nav {
 /*SPLASH*/
 
 .background_image {
-  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_3171/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+  background-color: #000000;
   background-size: cover;
   height: 500px;
   color: white;

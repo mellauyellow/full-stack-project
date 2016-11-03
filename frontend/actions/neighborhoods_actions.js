@@ -3,9 +3,9 @@ export const RECEIVE_NEIGHBORHOODS = "RECEIVE_NEIGHBORHOODS";
 export const FETCH_NEIGHBORHOOD = "FETCH_NEIGHBORHOOD";
 export const RECEIVE_NEIGHBORHOOD = "RECEIVE_NEIGHBORHOOD";
 
-export const fetchNeighborhoods = (region) => ({
+export const fetchNeighborhoods = (regionId) => ({
   type: FETCH_NEIGHBORHOODS,
-  region
+  regionId
 });
 
 export const receiveNeighborhoods = (neighborhoods) => ({
@@ -13,9 +13,9 @@ export const receiveNeighborhoods = (neighborhoods) => ({
   neighborhoods
 });
 
-export const fetchNeighborhood = (id) => ({
+export const fetchNeighborhood = (neighborhoodId) => ({
   type: FETCH_NEIGHBORHOOD,
-  id
+  neighborhoodId
 });
 
 export const receiveNeighborhood = (neighborhood) => ({

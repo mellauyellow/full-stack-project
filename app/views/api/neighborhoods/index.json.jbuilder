@@ -9,7 +9,7 @@ json.array! @neighborhoods do |neighborhood|
   json.housing_type neighborhood.housing_type
   json.architecture_type neighborhood.architecture_type
   json.region_id neighborhood.region_id
-  json.images region.images do |image|
+  json.images neighborhood.images do |image|
     json.id image.id
     json.url image.url
     json.region_rep image.neighborhood_rep

@@ -1,23 +1,23 @@
 import { FETCH_NEIGHBORHOODS,
          FETCH_NEIGHBORHOOD,
          receiveNeighborhoods,
-         receiveNeighborhood } from '../actions/neighborhood_actions';
-import { fetchNeighborhoods, fetchNeighborhood } from '../util/neighborhood_api_util';
+         receiveNeighborhood } from '../actions/neighborhoods_actions';
+import { fetchNeighborhoods, fetchNeighborhood } from '../util/neighborhoods_api_util';
 
-const NeighborhoodMiddleware = ({getState, dispatch}) => next => action => {
+const NeighborhoodsMiddleware = ({getState, dispatch}) => next => action => {
   const receiveNeighborhoodsSuccess = (neighborhoods) => dispatch(receiveNeighborhoods(neighborhoods));
   const receiveNeighborhoodSuccess = (neighborhood) => dispatch(receiveNeighborhood(neighborhood));
 
   switch (action.type) {
     case FETCH_NEIGHBORHOODS:
-      fetchNeighborhoods(receiveNeighborhoodsSuccess);
+      fetchNeighborhoods(action.regionId, receiveNeighborhoodsSuccess);
       return next(action);
     case FETCH_NEIGHBORHOOD:
-      fetchNeighborhood(receiveNeighborhoodSuccess);
+      fetchNeighborhood(action.neighborhoodId, receiveNeighborhoodSuccess);
       return next(action);
     default:
       return next(action);
   }
 };
 
-export default NeighborhoodMiddleware;
+export default NeighborhoodsMiddleware;

@@ -46,7 +46,7 @@
         1: {
           id: 1,
           user_id: 3,
-          body: "Can't walk around the Mission without hitting a man with a full beard and cuffed raw denim.",
+          body: "Love shopping at all the cute boutiques on Valencia Street.",
           good_for_families: false,
           good_for_singles: true,
           street_parking: false,

@@ -1,5 +1,5 @@
 import { merge } from 'lodash';
-import { RECEIVE_NEIGHBORHOODS, RECEIVE_NEIGHBORHOOD } from '../actions.neighborhood_actions';
+import { RECEIVE_NEIGHBORHOODS, RECEIVE_NEIGHBORHOOD } from '../actions/neighborhoods_actions';
 
 const _nullState = {
   searchResults: [],

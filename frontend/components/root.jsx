@@ -5,6 +5,7 @@ import App from './app';
 import SignupFormContainer from './signup/signup_form_container';
 import SessionFormContainer from './header/session/session_form_container';
 import SplashContainer from './splash/splash_container';
+import NeighborhoodPageContainer from './neighborhood_page/neighborhood_page_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -19,6 +20,7 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={SplashContainer} />
+          <Route path="neighborhood/:id" component={NeighborhoodPageContainer} />
         </Route>
       </Router>
     </Provider>

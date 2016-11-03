@@ -1,6 +1,7 @@
 class Api::NeighborhoodsController < ApplicationController
   def index
-    @neighborhoods = Neighborhood.all
+    region_id = params[:region_id]
+    @neighborhoods = Neighborhood.where("region_id = ?", region_id)
   end
 
   def show
