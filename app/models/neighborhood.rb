@@ -7,12 +7,14 @@ class Neighborhood < ActiveRecord::Base
     foreign_key: :region_id,
     primary_key: :id
 
+  has_many :images,
+    class_name: :Image,
+    foreign_key: :neighborhood_id,
+    primary_key: :id
+
   has_many :reviews,
     class_name: :Review,
     foreign_key: :neighborhood_id,
     primary_key: :id
 
-  has_many :images,
-    through: :reviews,
-    source: :images
 end

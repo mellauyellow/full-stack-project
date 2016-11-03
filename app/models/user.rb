@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :images,
+    class_name: :Image,
+    foreign_key: :user_id,
+    primary_key: :id
+
   attr_reader :password
 
   after_initialize :ensure_session_token

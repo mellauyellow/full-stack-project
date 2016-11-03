@@ -5,7 +5,7 @@ class Api::NeighborhoodsController < ApplicationController
   end
 
   def show
-    @neighborhood = Neighborhood.find(params[:id])
+    @neighborhood = Neighborhood.find_by_id(params[:id])
   end
 
   private

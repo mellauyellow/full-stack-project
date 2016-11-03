@@ -1,25 +1,31 @@
 import React from 'react';
-// import NeighborhoodImage from './neighborhood_image';
-// import NeighborhoodHeader from './neighborhood_header';
-// import NeighborhoodMap from './neighborhood_map';
-// import NeighborhoodReviewIndex from './neighborhood_review_index';
-// import NeighborhoodTrendingWords from './neighborhood_trending_words';
+import NeighborhoodImage from './neighborhood_image';
+import NeighborhoodHeader from './neighborhood_header';
+import NeighborhoodMap from './neighborhood_map';
+import NeighborhoodReviewIndex from './neighborhood_review_index';
 
-const NeighborhoodPage = ({currentNeighborhood}) => (
-  <div className="neighborhood-page">
-    <h2>This is the neighborhood page!</h2>
-  </div>
-);
+class NeighborhoodPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props.fetchNeighborhood(1);
+    console.log(props);
+  }
 
-export default NeighborhoodPage;
-
-
+  render() {
+    return (
+      <div className="neighborhood-page">
+        This is the neighborhood page!
+      </div>
+    );
+  }
+}
 // <NeighborhoodImage />
-// <NeighborhoodHeader currentNeighborhood={currentNeighborhood} />
+// <NeighborhoodHeader currentNeighborhood={this.props.currentNeighborhood} />
 // <div className="below-neighborhood-header">
 //   <div className="all-review-content">
-//     <NeighborhoodTrendingWords />
-//     <NeighborhoodReviewIndex />
+//     <NeighborhoodReviewIndex reviews={this.props.currentNeighborhood.reviews}/>
 //   </div>
-//   <NeighborhoodMap />
+//   <NeighborhoodMap currentNeighborhood={this.props.currentNeighborhood} />
 // </div>
+
+export default NeighborhoodPage;

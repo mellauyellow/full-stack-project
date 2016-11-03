@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchNeighborhood: (id) => dispatch(fetchNeighborhood(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NeighborhoodPage);

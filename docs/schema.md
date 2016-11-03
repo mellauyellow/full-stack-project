@@ -39,7 +39,8 @@ column name      | data type | details
 -----------------|-----------|-----------------------
 id               | integer   | not null, primary key
 url              | string    | not null, indexed, unique
-review_id        | integer   | not null, foreign_key (references reviews), indexed
+user_id          | integer   | not null, foreign_key (references reviews), indexed
+review_id        | integer   | foreign_key (references reviews), indexed
 region_rep       | boolean   | not null
 neighborhood_rep | boolean   | not null
 
