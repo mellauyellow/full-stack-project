@@ -64,7 +64,7 @@ body {
 /*HEADER*/
 
 nav {
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -94,6 +94,7 @@ nav {
   display: flex;
   align-items: center;
   margin-right: 10px;
+  width: 240px;
 }
 
 .auth-not-logged-in > div {
@@ -271,6 +272,7 @@ nav {
   display: flex;
   align-items: center;
   margin-right: 10px;
+  width: 240px;
 }
 
 .auth-logged-in > img {
@@ -301,16 +303,30 @@ nav {
 
 /*SPLASH*/
 
-.background_image {
+/*.background_image {
   background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_3171/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
   background-color: #000000;
+  background-size: cover;
+  height: 500px;
+  color: white;
+}*/
+
+.background_image {
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ),
+    /* bottom, image */
+    url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_3171/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
   background-size: cover;
   height: 500px;
   color: white;
 }
 
 .background_image section {
-  width: 900px;
+  width: 950px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -339,7 +355,7 @@ nav {
 }
 
 .neighborhood-header {
-  width: 900px;
+  width: 950px;
   display: flex;
   margin: 0 auto;
   padding: 15px;
@@ -372,17 +388,20 @@ nav {
 
 .below-neighborhood-header {
   display: flex;
-  width: 900px;
+  width: 950px;
   margin: 0 auto;
 }
 
 .all-review-content {
-  width: 600px;
+  width: 65%;
+  /*border: solid red 2px;*/
+  margin-right: 30px;
 }
 
 .neighborhood-map {
   border: solid red 2px;
-  width: 300px;
+  width: 35%;
+  height: 300px;
   padding: 10px;
 }
 
@@ -390,11 +409,10 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: solid red 2px;
 }
 
 .neighborhood-trending-words {
-  border: solid black 2px;
+
 }
 
 .review-items {
@@ -406,15 +424,54 @@ nav {
 }
 
 .neighborhood-review-index ul {
-  border: solid black 2px;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
 .neighborhood-review-index li {
+  display: flex;
+  padding: 20px 0px;
+  border-bottom: 1px solid silver;
+}
+
+.reviewer-content {
   display: flex;
 }
 
 .reviewer-content img {
   border: solid silver 1px;
   border-radius: 3px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.reviewer-content > div {
+  width: 120px;
+}
+
+.reviewer-content h5 {
+  font-weight: 500;
+  color: #6772E5;
+}
+
+.review-body h5:first-of-type {
+  color: silver;
+  margin-bottom: 10px;
+}
+
+.review-body h5 {
+  margin-bottom: 20px;
+}
+
+.review-images {
+  display: flex;
+}
+
+.review-image {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 2px;
+  margin-right: 20px;
 }

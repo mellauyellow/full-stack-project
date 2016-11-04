@@ -2,13 +2,23 @@ import React from 'react';
 import NeighborhoodTrendingWords from './neighborhood_trending_words';
 import NeighborhoodReviewItem from './neighborhood_review_item';
 
-const NeighborhoodReviewIndex = ({reviews, name}) => {
+const NeighborhoodReviewIndex = ({reviews, name, images}) => {
+  let imageKeys = Object.keys(images);
   let allReviews;
 
   if (reviews) {
-    allReviews = reviews.map((review, idx) => (
-      <NeighborhoodReviewItem review={review} key={idx} />
-    ));
+    allReviews = reviews.map((review, idx) => {
+      let reviewImages = [];
+      imageKeys.forEach(key => {
+        if (images[key].hasOwnProperty('review_id') && images[key].review_id === review.id) {
+          reviewImages.push(images[key]);
+        }
+      });
+
+      return (
+        <NeighborhoodReviewItem review={review} key={idx} images={reviewImages}/>
+      );
+    });
   }
 
   return (

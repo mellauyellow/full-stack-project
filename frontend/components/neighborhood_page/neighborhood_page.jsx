@@ -3,6 +3,7 @@ import NeighborhoodImage from './neighborhood_image';
 import NeighborhoodHeader from './neighborhood_header';
 import NeighborhoodMap from './neighborhood_map';
 import NeighborhoodReviewIndex from './neighborhood_review_index';
+import NeighborhoodImagesModal from './neighborhood_images_modal';
 
 class NeighborhoodPage extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class NeighborhoodPage extends React.Component {
         <NeighborhoodHeader neighborhood={this.props.neighborhood} />
         <div className="below-neighborhood-header">
           <div className="all-review-content">
-            <NeighborhoodReviewIndex reviews={this.props.reviews} name={this.props.neighborhood.name}/>
+            <NeighborhoodReviewIndex reviews={this.props.reviews} name={this.props.neighborhood.name} images={this.props.images}/>
           </div>
           <NeighborhoodMap currentNeighborhood={this.props.neighborhood} />
         </div>

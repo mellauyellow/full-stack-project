@@ -12,7 +12,6 @@ const NeighborhoodTrendingWords = ({reviews}) => {
 
   return (
     <div className="neighborhood-trending-words">
-      This is the neighborhood trending words component.
     </div>
   );
 };
