@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import { fetchReviews } from './actions/reviews_actions';
+import { fetchImages } from './actions/images_actions';
 
-window.fetchReviews = fetchReviews;
+window.fetchImages = fetchImages;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

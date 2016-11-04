@@ -14,6 +14,7 @@ class Api::ReviewsController < ApplicationController
                                    :good_for_families,
                                    :street_parking,
                                    :user_id,
-                                   :neighborhood_id)
+                                   :neighborhood_id,
+                                   :created_at)
   end
 end

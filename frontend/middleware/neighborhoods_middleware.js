@@ -4,12 +4,14 @@ import { FETCH_NEIGHBORHOODS,
          receiveNeighborhood } from '../actions/neighborhoods_actions';
 import { fetchNeighborhoods, fetchNeighborhood } from '../util/neighborhoods_api_util';
 import { fetchReviews } from '../actions/reviews_actions';
+import { fetchImages } from '../actions/images_actions';
 
 const NeighborhoodsMiddleware = ({getState, dispatch}) => next => action => {
   const receiveNeighborhoodsSuccess = (neighborhoods) => dispatch(receiveNeighborhoods(neighborhoods));
   const receiveNeighborhoodSuccess = (neighborhood) => {
     dispatch(receiveNeighborhood(neighborhood));
     dispatch(fetchReviews(neighborhood.id));
+    dispatch(fetchImages(neighborhood.id));
   };
 
   switch (action.type) {

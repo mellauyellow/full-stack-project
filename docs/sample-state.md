@@ -37,10 +37,12 @@
   images: {
     1: {
       id: 2,
+      url: "www.test.com",
       user: {id: 2, first_name: "Jane", last_name: "Kim"},
       caption: "Dolores Park is the best!",
       region_rep: true,
-      neighborhood_rep: true
+      neighborhood_rep: true,
+      created_at: Thu, 03 Nov 2016 23:26:53 UTC +00:00
     }
   },
   reviews: [
@@ -52,7 +54,8 @@
       good_for_singles: true,
       street_parking: false,
       good_for_pets: true,
-      good_for_bikes: true
+      good_for_bikes: true,
+      created_at: Thu, 03 Nov 2016 23:26:53 UTC +00:00
     }
   ],
   searchFilters: {
