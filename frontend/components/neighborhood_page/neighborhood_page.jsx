@@ -13,18 +13,17 @@ class NeighborhoodPage extends React.Component {
   render() {
     return (
       <div className="neighborhood-page">
-        This is the neighborhood page!
+        <NeighborhoodImage images={this.props.images}/>
+        <NeighborhoodHeader neighborhood={this.props.neighborhood} />
+        <div className="below-neighborhood-header">
+          <div className="all-review-content">
+            <NeighborhoodReviewIndex reviews={this.props.reviews} name={this.props.neighborhood.name}/>
+          </div>
+          <NeighborhoodMap currentNeighborhood={this.props.neighborhood} />
+        </div>
       </div>
     );
   }
 }
-// <NeighborhoodImage />
-// <NeighborhoodHeader currentNeighborhood={this.props.currentNeighborhood} />
-// <div className="below-neighborhood-header">
-//   <div className="all-review-content">
-//     <NeighborhoodReviewIndex reviews={this.props.currentNeighborhood.reviews}/>
-//   </div>
-//   <NeighborhoodMap currentNeighborhood={this.props.currentNeighborhood} />
-// </div>
 
 export default NeighborhoodPage;

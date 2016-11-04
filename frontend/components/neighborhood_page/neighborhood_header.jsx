@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NeighborhoodHeader = ({currentNeighborhood}) => {
+const NeighborhoodHeader = ({neighborhood}) => {
   const handleReviewClick = () => {
 
   };
@@ -10,8 +10,8 @@ const NeighborhoodHeader = ({currentNeighborhood}) => {
   };
 
   return (
-    <div className="neighborhood-header'">
-      <h2>{currentNeighborhood.name}</h2>
+    <div className="neighborhood-header">
+      <h2>{neighborhood.name}</h2>
       <div className="neighborhood-header-buttons">
         <button onClick={handleReviewClick}>Write a Review</button>
         <button onClick={handlePhotoClick}>Add a Photo</button>

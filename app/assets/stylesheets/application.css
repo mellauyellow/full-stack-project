@@ -16,7 +16,7 @@
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, img, a,
 small, strike, strong, ol, ul, li, form, label, article,
-aside, figcaption, footer, header, nav, section {
+aside, figcaption, footer, header, nav, section, button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 h3 {
@@ -42,7 +42,15 @@ h3 {
 }
 
 h4 {
+  font-size: 18px;
+}
+
+h5 {
   font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
 }
 
 body {
@@ -95,25 +103,28 @@ nav {
 
 .auth-not-logged-in a {
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px;
   font-size: 14px;
   font-weight: 400;
   color: black;
   align-content: center;
-  border: solid 2px white;
+  border: solid white 2px;
+  border-radius: 2px;
+  background: white;
 }
 
 .auth-not-logged-in a:hover {
   color: white;
-  background-color: #317cff;
-  border: solid 2px #317cff;
-  border-radius: 3px;
+  background-color: #6772E5;
+  border: solid 2px #6772E5;
+  border-radius: 2px;
   cursor: pointer;
 }
 
 .guest-link > a {
   border: solid 2px silver;
-  border-radius: 3px;
+  background-color: white;
+  border-radius: 2px;
 }
 
 .guest-link > a:hover {
@@ -317,4 +328,93 @@ nav {
   font-weight: 400;
   /*padding: 15px;*/
   text-shadow: 0px 0px 2px #000000;
+}
+
+/*NEIGHBORHOOD PAGE*/
+
+.neighborhood-image {
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.neighborhood-header {
+  width: 900px;
+  display: flex;
+  margin: 0 auto;
+  padding: 15px;
+  align-items: center;
+}
+
+.neighborhood-header h2 {
+  font-weight: 500;
+  margin-right: 50px;
+  margin-left: 10px;
+}
+
+.neighborhood-header-buttons button {
+  border: none;
+  background: #6772E5;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px;
+  border: 3px solid white;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
+.neighborhood-header-buttons button:hover {
+  background: #7795F8;
+  border: 3px solid #6772E5;
+  cursor: pointer;
+}
+
+.below-neighborhood-header {
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.all-review-content {
+  width: 600px;
+}
+
+.neighborhood-map {
+  border: solid red 2px;
+  width: 300px;
+  padding: 10px;
+}
+
+.neighborhood-review-index {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: solid red 2px;
+}
+
+.neighborhood-trending-words {
+  border: solid black 2px;
+}
+
+.review-items {
+  margin: 20px 0px;
+}
+
+.review-items h4 {
+  font-weight: 500;
+}
+
+.neighborhood-review-index ul {
+  border: solid black 2px;
+  margin: 20px 0px;
+}
+
+.neighborhood-review-index li {
+  display: flex;
+}
+
+.reviewer-content img {
+  border: solid silver 1px;
+  border-radius: 3px;
 }

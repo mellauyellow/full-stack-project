@@ -3,7 +3,9 @@ import NeighborhoodPage from './neighborhood_page';
 import { fetchNeighborhood } from '../../actions/neighborhoods_actions';
 
 const mapStateToProps = state => ({
-  currentNeighborhood: state.neighborhoods.currentNeighborhood
+  neighborhood: state.neighborhood,
+  images: state.images,
+  reviews: state.reviews
 });
 
 const mapDispatchToProps = dispatch => ({

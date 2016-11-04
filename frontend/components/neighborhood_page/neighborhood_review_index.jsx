@@ -2,7 +2,7 @@ import React from 'react';
 import NeighborhoodTrendingWords from './neighborhood_trending_words';
 import NeighborhoodReviewItem from './neighborhood_review_item';
 
-const NeighborhoodReviewIndex = ({reviews}) => {
+const NeighborhoodReviewIndex = ({reviews, name}) => {
   let allReviews;
 
   if (reviews) {
@@ -12,11 +12,15 @@ const NeighborhoodReviewIndex = ({reviews}) => {
   }
 
   return (
-    <div className="neighborhood-review-index'">
+    <div className="neighborhood-review-index">
       <NeighborhoodTrendingWords reviews={reviews} />
-      <ul>
-        {allReviews}
-      </ul>
+      <div className="review-items">
+        <h4>Recommended reviews for {name}</h4>
+        <h5>{reviews.length} reviews</h5>
+        <ul>
+          {allReviews}
+        </ul>
+      </div>
     </div>
   );
 };

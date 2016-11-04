@@ -22,7 +22,7 @@ user2 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test2", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test2", "50x50"))
 
 user3 = User.create(
                     username: "test3",
@@ -31,7 +31,7 @@ user3 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test3", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test3", "50x50"))
 
 user4 = User.create(
                     username: "test4",
@@ -40,7 +40,7 @@ user4 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test4", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test4", "50x50"))
 
 user5 = User.create(
                     username: "test5",
@@ -49,7 +49,7 @@ user5 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test5", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test5", "50x50"))
 
 user6 = User.create(
                     username: "test6",
@@ -58,7 +58,7 @@ user6 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test6", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test6", "50x50"))
 
 user7 = User.create(
                     username: "test7",
@@ -67,7 +67,7 @@ user7 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test7", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test7", "50x50"))
 
 user8 = User.create(
                     username: "test8",
@@ -76,7 +76,7 @@ user8 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test8", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test8", "50x50"))
 
 user9 = User.create(
                     username: "test9",
@@ -85,7 +85,7 @@ user9 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test9", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test9", "50x50"))
 
 user10 = User.create(
                     username: "test10",
@@ -94,7 +94,7 @@ user10 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test10", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test10", "50x50"))
 
 user11 = User.create(
                     username: "test11",
@@ -103,7 +103,7 @@ user11 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test11", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test11", "50x50"))
 
 user12 = User.create(
                     username: "test12",
@@ -112,7 +112,7 @@ user12 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test12", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test12", "50x50"))
 
 user13 = User.create(
                     username: "test13",
@@ -121,7 +121,7 @@ user13 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test13", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test13", "50x50"))
 
 user14 = User.create(
                     username: "test14",
@@ -130,7 +130,7 @@ user14 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test14", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test14", "50x50"))
 
 user15 = User.create(
                     username: "test15",
@@ -139,7 +139,7 @@ user15 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test15", "35x35"))
+                    profile_pic_url: Faker::Avatar.image("test15", "50x50"))
 
 region1 = Region.create(name: "San Francisco", state: "CA")
 region2 = Region.create(name: "New York", state: "NY")
