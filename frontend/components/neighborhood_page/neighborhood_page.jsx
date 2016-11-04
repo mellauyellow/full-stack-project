@@ -3,7 +3,7 @@ import NeighborhoodImage from './neighborhood_image';
 import NeighborhoodHeader from './neighborhood_header';
 import NeighborhoodMap from './neighborhood_map';
 import NeighborhoodReviewIndex from './neighborhood_review_index';
-import NeighborhoodImagesModal from './neighborhood_images_modal';
+import NeighborhoodImagesSlideshow from './neighborhood_images_slideshow';
 
 class NeighborhoodPage extends React.Component {
   constructor(props) {

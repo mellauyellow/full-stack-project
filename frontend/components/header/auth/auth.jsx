@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Modal from 'react-modal';
-import ModalStyle from '../../modal_style';
+import ModalStyle from './auth_modal_style';
 import SessionFormContainer from '../session/session_form_container';
 import SignupFormContainer from '../../signup/signup_form_container';
 
