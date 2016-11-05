@@ -13,6 +13,7 @@ class NeighborhoodImage extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
+
   }
 
   handleClick() {
@@ -30,9 +31,18 @@ class NeighborhoodImage extends React.Component {
 
   render() {
     if (Object.keys(this.props.images).length > 0) {
+      let imageKeys = Object.keys(this.props.images);
+
+      let neighborhoodReps = imageKeys.filter(key => {
+        return this.props.images[key].neighborhood_rep === true;
+      });
+
+      let randomNeighborhoodRep = neighborhoodReps[Math.floor(Math.random() * neighborhoodReps.length)];
+      // debugger
       let style = {
-        backgroundImage: 'url(' + this.props.images[1].url + ')'
+        backgroundImage: 'url(' + this.props.images[randomNeighborhoodRep].url + ')'
       };
+
       return (
         <div>
           <a onClick={this.handleClick}>
