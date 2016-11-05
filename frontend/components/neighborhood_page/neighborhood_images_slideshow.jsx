@@ -21,7 +21,6 @@ const NeighborhoodImagesSlideshow = ({images}) => {
     });
 
     let settings = {
-      dots: true,
       arrows: true,
       accessibility: true
     };
