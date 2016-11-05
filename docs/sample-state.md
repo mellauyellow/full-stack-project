@@ -48,7 +48,7 @@
   reviews: [
     {
       id: 1,
-      user: {id: 4, first_name: "Greg", last_name: "Jones"},
+      user: {id: 4, first_name: "Greg", last_name: "Jones", profile_pic_url: "www.test.com", zip_code: 94024},
       body: "Love shopping at all the cute boutiques on Valencia Street.",
       good_for_families: false,
       good_for_singles: true,

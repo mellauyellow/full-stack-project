@@ -4,6 +4,17 @@ class Api::ReviewsController < ApplicationController
     @reviews = Review.where("neighborhood_id = ?", neighborhood_id)
   end
 
+  def create
+    @review = Review.new(review_params)
+
+    if @review.save
+      render :show
+    else
+      @errors = @review.errors
+      render :json => @errors, status: 422
+    end
+  end
+
   private
 
   def review_params

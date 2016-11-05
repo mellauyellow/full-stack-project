@@ -8,20 +8,7 @@ import NeighborhoodImagesSlideshow from './neighborhood_images_slideshow';
 class NeighborhoodPage extends React.Component {
   constructor(props) {
     super(props);
-    // this.props.fetchNeighborhood(1);
   }
-
-  // componentDidMount() {
-  //   this.props.fetchNeighborhood(this.props.routeParams.id);
-  // }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.props.fetchNeighborhood(nextProps.routeParams.id);
-  // }
-
-  // componentWillUpdate() {
-  //   this.props.fetchNeighborhood(this.props.routeParams.id);
-  // }
 
   render() {
     return (
