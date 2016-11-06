@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   handleChange(field) {
@@ -31,11 +32,20 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.closeModal();
+    if (this.props.nextAction) {
+      this.props.nextAction();
+    } else if (this.props.closeModal){
+      this.props.closeModal();
+    }
   }
 
   componentDidUpdate() {
     this.redirectIfLoggedIn();
+  }
+
+  handleGuestLogin(e) {
+    e.preventDefault();
+    this.props.login({username: "guest", password: "password"});
   }
 
   render() {
@@ -61,8 +71,9 @@ class SessionForm extends React.Component {
           <input type="submit" value="Log in"></input>
         </form>
         <div className="login-form-signup">
-          <small>Don't have an account? &nbsp;</small>
-          <Link to='/signup'>Sign up</Link>
+          <a onClick={this.handleGuestLogin}>Log in as a Guest</a>
+          <br></br>
+          <small>Don't have an account? &nbsp;</small><Link to='/signup' onClick={this.props.closeModal}>Sign up</Link>
         </div>
       </div>
     );

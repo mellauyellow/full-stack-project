@@ -41,7 +41,11 @@ class SignupForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.closeModal();
+    if (this.props.nextAction) {
+      this.props.nextAction();
+    } else if (this.props.closeModal){
+      this.props.closeModal();
+    }
   }
 
   renderErrors() {
@@ -81,7 +85,7 @@ class SignupForm extends React.Component {
         </form>
         <div className="signup-form-login">
           <small>Already have an account? &nbsp;</small>
-          <Link to='/login'>Log in</Link>
+          <Link to='/login' onClick={this.props.closeModal}>Log in</Link>
         </div>
       </div>
     );

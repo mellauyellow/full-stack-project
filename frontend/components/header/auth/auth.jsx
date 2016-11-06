@@ -16,6 +16,7 @@ class Auth extends React.Component {
     this.onModalClose = this.onModalClose.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
+    this.determineComponent = this.determineComponent.bind(this);
   }
 
   handleClick(bool) {
@@ -23,6 +24,7 @@ class Auth extends React.Component {
       this.setState({modalOpen: true, signIn: bool});
     };
   }
+
 
   onModalClose() {
     this.setState({modalOpen: false});
@@ -38,8 +40,22 @@ class Auth extends React.Component {
     this.props.login({username: "guest", password: "password"});
   }
 
+  determineComponent() {
+    let component;
+
+    if (this.state.signIn) {
+      component = <SessionFormContainer closeModal={this.onModalClose} />;
+    } else {
+      component = <SignupFormContainer closeModal={this.onModalClose} />;
+    }
+
+    return component;
+  }
+
   render() {
-    let component = (this.state.signIn) ? <SessionFormContainer closeModal={this.onModalClose}/> : <SignupFormContainer closeModal={this.onModalClose}/>;
+    let component = this.determineComponent();
+    console.log(this.state);
+
 
     if (this.props.currentUser.username) {
       return (

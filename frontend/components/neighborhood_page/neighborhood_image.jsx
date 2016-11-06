@@ -13,7 +13,6 @@ class NeighborhoodImage extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
-
   }
 
   handleClick() {

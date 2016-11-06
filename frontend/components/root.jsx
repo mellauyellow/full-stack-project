@@ -26,13 +26,13 @@ const Root = ({store}) => {
         <Route path="/" component={App}>
           <IndexRoute component={SplashContainer} />
           <Route path="neighborhood/:id" component={NeighborhoodPageContainer} onEnter={_fetchSingleNeighborhood}/>
+          <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
+          <Route path="/signup" component={SignupFormContainer} onEnter={_redirectIfLoggedIn}/>
         </Route>
       </Router>
     </Provider>
   );
 };
 
-// <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-// <Route path="/signup" component={SignupFormContainer} onEnter={_redirectIfLoggedIn}/>
 
 export default Root;

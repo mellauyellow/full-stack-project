@@ -4,7 +4,6 @@ import NeighborhoodHeader from './neighborhood_header';
 import NeighborhoodMap from './neighborhood_map';
 import NeighborhoodReviewIndex from './neighborhood_review_index';
 import NeighborhoodImagesSlideshow from './neighborhood_images_slideshow';
-import ReviewForm from './review_form/review_form';
 
 class NeighborhoodPage extends React.Component {
   constructor(props) {
@@ -15,9 +14,8 @@ class NeighborhoodPage extends React.Component {
   render() {
     return (
       <div className="neighborhood-page">
-        <ReviewForm currentUser={this.props.currentUser} neighborhood={this.props.neighborhood} postReview={this.props.postReview} />
         <NeighborhoodImage images={this.props.images}/>
-        <NeighborhoodHeader neighborhood={this.props.neighborhood} />
+        <NeighborhoodHeader neighborhood={this.props.neighborhood} currentUser={this.props.currentUser} postReview={this.props.postReview}/>
         <div className="below-neighborhood-header">
           <div className="all-review-content">
             <NeighborhoodReviewIndex reviews={this.props.reviews} name={this.props.neighborhood.name} images={this.props.images}/>
