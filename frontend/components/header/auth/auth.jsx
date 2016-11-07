@@ -54,8 +54,6 @@ class Auth extends React.Component {
 
   render() {
     let component = this.determineComponent();
-    console.log(this.state);
-
 
     if (this.props.currentUser.username) {
       return (

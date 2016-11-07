@@ -4,7 +4,8 @@ import { fetchRegions } from '../../../actions/regions_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   regions: state.regions,
-  location: ownProps.location
+  location: ownProps.location,
+  router: ownProps.router
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -485,15 +485,15 @@ nav {
 }
 
 .review-form form > label {
-  margin-right: 40px;
-  width: 100%;
+  margin-right: 80px;
 }
 
-.review-form input[type=textarea] {
+.review-form textarea {
   width: 250px;
   height: 200px;
   border: 1px solid black;
   font-size: 12px;
+  resize: none;
 }
 
 .review-form h5 {
@@ -504,7 +504,6 @@ nav {
 .review-questions {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .review-questions fieldset {

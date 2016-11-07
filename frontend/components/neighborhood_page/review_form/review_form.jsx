@@ -81,7 +81,7 @@ class ReviewForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <h5>Your review:</h5>
-            <input type="textarea" wrap="soft" value={this.state.body} onChange={this.handleChange("body")} placeholder="Help others learn about the neighborhood."></input>
+            <textarea wrap="soft" value={this.state.body} onChange={this.handleChange("body")} placeholder="Help others learn about the neighborhood."></textarea>
           </label>
 
           <div className="review-questions">

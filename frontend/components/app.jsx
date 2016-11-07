@@ -12,7 +12,7 @@ const App = ({children}) => (
           <h1 className="company-name">onward</h1>
         </Link>
       </div>
-      <SearchDropdownContainer location={children.props.location.pathname}/>
+      <SearchDropdownContainer location={children.props.location.pathname} router={children.props.router}/>
       <AuthContainer />
     </nav>
     <div className="children">

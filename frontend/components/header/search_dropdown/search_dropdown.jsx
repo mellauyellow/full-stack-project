@@ -5,6 +5,13 @@ class SearchDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.props.fetchRegions();
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    let regionId = e.target.value;
+    let path = `/search-results/${regionId}`;
+    this.props.router.push(path);
   }
 
   render() {
@@ -27,10 +34,9 @@ class SearchDropdown extends React.Component {
       style = {};
     }
 
-
     return (
       <div className="regions-dropdown" style={divStyle}>
-        <select style={style}>
+        <select style={style} onChange={this.handleChange}>
           <option>Select a region:</option>
           {allRegions}
         </select>
