@@ -1,45 +1,72 @@
 import React from 'react';
 import { merge } from 'lodash';
 import ReviewFormItem from './review_form_item';
+import Dropzone from 'react-dropzone';
 
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: "",
-      good_for_pets: null,
-      good_for_bikes: null,
-      good_for_singles: null,
-      good_for_families: null,
-      street_parking: null,
-      user_id: this.props.currentUser.id,
-      neighborhood_id: this.props.neighborhood.id
+      review: {
+        body: "",
+        good_for_pets: null,
+        good_for_bikes: null,
+        good_for_singles: null,
+        good_for_families: null,
+        street_parking: null,
+        user_id: this.props.currentUser.id,
+        neighborhood_id: this.props.neighborhood.id
+      },
+      photos: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.onDrop = this.onDrop.bind(this);
+  }
+
+  onDrop(acceptedFiles, rejectedFiles) {
+    let photos = this.state.photos.slice(0);
+    let newPhotos = photos.concat(acceptedFiles);
+    this.setState({photos: newPhotos});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let newState = merge({}, this.state);
-    let stateKeys = Object.keys(newState);
+    let newReviewState = merge({}, this.state.review);
+    let stateKeys = Object.keys(newReviewState);
     stateKeys.forEach(key => {
-      if (newState[key] === "null") {
-        delete newState[key];
+      if (newReviewState[key] === "null") {
+        delete newReviewState[key];
       }
     });
 
-    this.props.postReview(newState, newState.neighborhood_id);
+    this.props.postReview(newReviewState, newReviewState.neighborhood_id);
     this.props.closeModal();
   }
 
   handleChange(field) {
-    return (e) => (
-      this.setState({[field]: e.target.value})
-    );
+    return (e) => {
+      const newReviewState = merge({}, this.state.review);
+      newReviewState[field] = e.target.value;
+      this.setState({review: newReviewState});
+    };
   }
 
   render() {
+    console.log(this.state);
+    let photoPreview;
+    if (this.state.photos.length > 0) {
+      let allPhotos = this.state.photos.map((file, idx) => <img src={file.preview} key={idx} />);
+
+      photoPreview =
+        (<div>
+          <h5>Uploading {this.state.photos.length} files...</h5>
+          <div>{allPhotos}</div>
+        </div>);
+    } else {
+      photoPreview = <div></div>;
+    }
+
     return (
       <div className="review-form">
         <h3>Write a review for the {this.props.neighborhood.name} neighborhood</h3>
@@ -141,6 +168,13 @@ class ReviewForm extends React.Component {
                 </label>
               </div>
             </fieldset>
+
+            <div className="dropzone-container">
+              <Dropzone onDrop={this.onDrop} className="dropzone">
+                <div className="dropzone-text">Click to select files to upload, or drag the files here.</div>
+              </Dropzone>
+              {photoPreview}
+            </div>
 
             <input type="submit" value="Submit Review"></input>
 

@@ -528,6 +528,29 @@ fieldset > h5 {
   margin-right: 10px;
 }
 
+.dropzone-container {
+  display: flex;
+}
+
+.dropzone {
+  width: 200px;
+  height: 150px;
+  margin-right: 20px;
+  border: 2px black dashed;
+  border-radius: 2px;
+}
+
+.dropzone-text {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.dropzone-container img {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
 /*NEIGHBORHOOD PAGE CONTENT*/
 
 .all-review-content {
