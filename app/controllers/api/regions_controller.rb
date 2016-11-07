@@ -6,6 +6,7 @@ class Api::RegionsController < ApplicationController
   def show
     @region = Region.find_by_id(params[:id])
     @neighborhoods = @region.neighborhoods
+    @images = @region.images.where(neighborhood_rep: true)
   end
 
   private

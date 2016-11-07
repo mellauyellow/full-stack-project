@@ -20,6 +20,17 @@
       {id: 4, url: "test", region_rep: false}
     ]}
   ],
+  region: {
+    name: "San Francisco",
+    state: "CA",
+    id: 1,
+    neighborhoods: [
+      {}
+    ],
+    images: [
+      {}
+    ]
+  },
   neighborhoods: [
     {id: 21, name: "Pacific Heights", center_lat: 12.2353, center_long: 144.2334, cost_of_living: 4, region_id: 3, images: [], etc.},
     {id: 2, name: "Bayview", center_lat: 14.2373, center_long: 140.3334, cost_of_living: 1 region_id: 3, images: [], etc.},

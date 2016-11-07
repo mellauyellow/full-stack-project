@@ -1,4 +1,5 @@
 json.extract! @region, :name, :state, :id
+
 json.neighborhoods @neighborhoods do |neighborhood|
   json.id neighborhood.id
   json.name neighborhood.name
@@ -8,4 +9,9 @@ json.neighborhoods @neighborhoods do |neighborhood|
   json.transit_score neighborhood.transit_score
   json.cost_of_living neighborhood.cost_of_living
   json.housing_type neighborhood.housing_type
+end
+
+json.images @images do |image|
+  json.url image.url
+  json.neighborhood_id image.neighborhood_id
 end
