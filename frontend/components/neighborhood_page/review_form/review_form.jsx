@@ -26,6 +26,7 @@ class ReviewForm extends React.Component {
 
   onDrop(acceptedFiles, rejectedFiles) {
     let photos = this.state.photos.slice(0);
+    // acceptedFiles.forEach(file => {})
     let newPhotos = photos.concat(acceptedFiles);
     this.setState({photos: newPhotos});
   }
@@ -40,7 +41,14 @@ class ReviewForm extends React.Component {
       }
     });
 
+    if (this.state.photos.length > 0) {
+      this.state.photos.forEach(image => (
+        this.props.uploadImage(image, this.props.neighborhood.id)
+      ));
+    }
+
     this.props.postReview(newReviewState, newReviewState.neighborhood_id);
+
     this.props.closeModal();
   }
 
@@ -53,7 +61,7 @@ class ReviewForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.state.photos);
     let photoPreview;
     if (this.state.photos.length > 0) {
       let allPhotos = this.state.photos.map((file, idx) => <img src={file.preview} key={idx} />);

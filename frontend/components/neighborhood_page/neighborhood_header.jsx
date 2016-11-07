@@ -54,7 +54,8 @@ class NeighborhoodHeader extends React.Component {
           currentUser={this.props.currentUser}
           neighborhood={this.props.neighborhood}
           postReview={this.props.postReview}
-          closeModal={this.onModalClose}/>;
+          closeModal={this.onModalClose}
+          uploadImage={this.props.uploadImage}/>;
       } else {
         component = <div></div>;
       }

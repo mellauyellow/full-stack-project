@@ -10,12 +10,11 @@ class NeighborhoodPage extends React.Component {
     super(props);
   }
 
-
   render() {
     return (
       <div className="neighborhood-page">
         <NeighborhoodImage images={this.props.images}/>
-        <NeighborhoodHeader neighborhood={this.props.neighborhood} currentUser={this.props.currentUser} postReview={this.props.postReview}/>
+        <NeighborhoodHeader neighborhood={this.props.neighborhood} currentUser={this.props.currentUser} postReview={this.props.postReview} uploadImage={this.props.uploadImage}/>
         <div className="below-neighborhood-header">
           <div className="all-review-content">
             <NeighborhoodReviewIndex reviews={this.props.reviews} name={this.props.neighborhood.name} images={this.props.images}/>

@@ -8,6 +8,7 @@ export const fetchImages = (neighborhoodId, success, error) => {
 };
 
 export const uploadImage = (image, neighborhoodId, success, error) => {
+  debugger
   $.ajax({
     method: 'POST',
     url: `api/neighborhoods/${neighborhoodId}/images`,

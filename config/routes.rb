@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
 
-    resources :regions, only: [:index] do
+    resources :regions, only: [:index, :show] do
       resources :neighborhoods, only: [:index]
     end
 

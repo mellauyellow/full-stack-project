@@ -5,6 +5,7 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
+    debugger
     @image = Image.new(image_params);
 
     if @image.save
@@ -18,13 +19,13 @@ class Api::ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url,
-                                  :created_at,
-                                  :caption,
-                                  :user_id,
-                                  :review_id,
-                                  :region_rep,
-                                  :neighborhood_rep,
-                                  :neighborhood_id)
+    # params.require(:image).permit(:url,
+    #                               :created_at,
+    #                               :caption,
+    #                               :user_id,
+    #                               :review_id,
+    #                               :region_rep,
+    #                               :neighborhood_rep,
+    #                               :neighborhood_id)
   end
 end

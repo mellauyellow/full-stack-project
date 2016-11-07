@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import NeighborhoodPage from './neighborhood_page';
 import { fetchNeighborhood } from '../../actions/neighborhoods_actions';
 import { postReview } from '../../actions/reviews_actions';
+import { uploadImage } from '../../actions/images_actions';
 
 const mapStateToProps = state => ({
   neighborhood: state.neighborhood,
@@ -12,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchNeighborhood: (id) => dispatch(fetchNeighborhood(id)),
-  postReview: (review, neighborhoodId) => dispatch(postReview(review, neighborhoodId))
+  postReview: (review, neighborhoodId) => dispatch(postReview(review, neighborhoodId)),
+  uploadImage: (image, neighborhoodId) => dispatch(uploadImage(image, neighborhoodId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NeighborhoodPage);
