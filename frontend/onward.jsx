@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import { postReview } from './actions/reviews_actions';
+import { uploadImage } from './actions/images_actions';
 
-window.postReview = postReview;
+window.uploadImage = uploadImage;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

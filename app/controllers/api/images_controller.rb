@@ -4,6 +4,17 @@ class Api::ImagesController < ApplicationController
     @images = Image.where("neighborhood_id = ?", neighborhood_id)
   end
 
+  def create
+    @image = Image.new(image_params);
+
+    if @image.save
+      render :show
+    else
+      @errors = @image.errors
+      render :json => @errors, status: 422
+    end
+  end
+
   private
 
   def image_params

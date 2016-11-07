@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resources :neighborhoods, only: [:show] do
       resources :reviews, only: [:index, :create]
-      resources :images, only: [:index]
+      resources :images, only: [:index, :create]
     end
   end
 

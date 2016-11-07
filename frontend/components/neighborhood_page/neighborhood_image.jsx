@@ -29,6 +29,8 @@ class NeighborhoodImage extends React.Component {
   }
 
   render() {
+    let nImage;
+
     if (Object.keys(this.props.images).length > 0) {
       let imageKeys = Object.keys(this.props.images);
 
@@ -36,18 +38,23 @@ class NeighborhoodImage extends React.Component {
         return this.props.images[key].neighborhood_rep === true;
       });
 
-      let randomNeighborhoodRep = neighborhoodReps[Math.floor(Math.random() * neighborhoodReps.length)];
-      // debugger
-      let style = {
-        backgroundImage: 'url(' + this.props.images[randomNeighborhoodRep].url + ')'
-      };
+      if (neighborhoodReps.length > 0) {
+        let randomNeighborhoodRep = neighborhoodReps[Math.floor(Math.random() * neighborhoodReps.length)];
+
+        let style = {
+          backgroundImage: 'url(' + this.props.images[randomNeighborhoodRep].url + ')'
+        };
+        nImage = (<div className="neighborhood-image" style={style}>
+                    <button>View Photos</button>
+                  </div>);
+      } else {
+        nImage = <div></div>;
+      }
 
       return (
         <div>
           <a onClick={this.handleClick}>
-            <div className="neighborhood-image" style={style}>
-              <button>View Photos</button>
-            </div>
+            {nImage}
           </a>
           <Modal
             isOpen={this.state.modalOpen}
