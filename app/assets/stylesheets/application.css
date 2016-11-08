@@ -732,3 +732,12 @@ fieldset > h5 {
   height: 500px;
   width: 45%;
 }
+
+.gm-style-iw {
+  text-align: center;
+  padding: 0px;
+}
+
+.gm-style-iw + div {
+  display: none;
+}

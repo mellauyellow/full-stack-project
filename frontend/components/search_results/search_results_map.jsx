@@ -28,8 +28,8 @@ class SearchResultsMap extends React.Component {
 
   addNeighborhoodMarker(neighborhood) {
     let pos = new google.maps.LatLng(neighborhood.center_lat, neighborhood.center_long);
-    let link = `#/neighborhood/${neighborhood.id}`;
-    let contentString = `<a href=${link}><h5>${neighborhood.name}</h5></a>`;
+    let path = `/neighborhood/${neighborhood.id}`;
+    let contentString = `<h5>${neighborhood.name}</h5>`;
 
     let infowindow = new google.maps.InfoWindow({
       content: contentString
@@ -39,8 +39,17 @@ class SearchResultsMap extends React.Component {
       position: pos,
       map: this.map
     });
+
     marker.addListener('click', () => (
+      this.props.router.push(path)
+    ));
+
+    marker.addListener('mouseover', () => (
       infowindow.open(this.map, marker)
+    ));
+
+    marker.addListener('mouseout', () => (
+      infowindow.close()
     ));
   }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import NeighborhoodResultItem from './neighborhood_result_item';
 import SearchResultsMap from './search_results_map';
 
-const Region = ({region}) => {
+const Region = ({region, router}) => {
   const containsNeighborhoodImage = (neighborhoodId) => {
     if (region.images) {
       let allImages = region.images.filter(image => (image.neighborhood_id === neighborhoodId));
@@ -43,7 +43,7 @@ const Region = ({region}) => {
             <div className="neighborhood-results">
               {neighborhoods}
             </div>
-            <SearchResultsMap region={region}/>
+            <SearchResultsMap region={region} router={router}/>
           </div>
         </div>
     );
