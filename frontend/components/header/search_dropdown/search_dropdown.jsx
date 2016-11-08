@@ -48,8 +48,8 @@ class SearchDropdown extends React.Component {
     return (
       <div className="regions-dropdown" style={divStyle}>
         <div className="dropdown" style={classStyle}>
-          <select onChange={this.handleChange} style={selectStyle}>
-            <option>Select a region:</option>
+          <select onChange={this.handleChange} style={selectStyle} value="default">
+            <option value="default">Select a region:</option>
             {allRegions}
           </select>
         </div>
