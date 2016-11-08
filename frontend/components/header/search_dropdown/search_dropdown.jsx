@@ -30,14 +30,14 @@ class SearchDropdown extends React.Component {
       classStyle = {
         position: "absolute",
         top: 400,
-        left: -50
+        left: -50,
+        backgroundColor: "white"
       };
       selectStyle = {
         fontSize: 18,
         color: "silver",
         borderRadius: 2,
-        background: 'url(http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif) no-repeat 90% 50%',
-        backgroundColor: "white"
+        background: 'url(http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif) no-repeat 90% 50%'
       };
     } else {
       selectStyle = {
@@ -49,7 +49,7 @@ class SearchDropdown extends React.Component {
       <div className="regions-dropdown" style={divStyle}>
         <div className="dropdown" style={classStyle}>
           <select onChange={this.handleChange} style={selectStyle} value="default">
-            <option value="default">Select a region:</option>
+            <option value="default">Select a region</option>
             {allRegions}
           </select>
         </div>

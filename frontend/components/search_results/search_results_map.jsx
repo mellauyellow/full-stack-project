@@ -28,12 +28,20 @@ class SearchResultsMap extends React.Component {
 
   addNeighborhoodMarker(neighborhood) {
     let pos = new google.maps.LatLng(neighborhood.center_lat, neighborhood.center_long);
-    // let link = `/neighborhood`
-    let contentString = `<Link to=><h5>${neighborhood.name}</h5></Link>`
+    let link = `#/neighborhood/${neighborhood.id}`;
+    let contentString = `<a href=${link}><h5>${neighborhood.name}</h5></a>`;
+
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
     let marker = new google.maps.Marker({
       position: pos,
       map: this.map
     });
+    marker.addListener('click', () => (
+      infowindow.open(this.map, marker)
+    ));
   }
 
   // componentWillReceiveProps(nextProps) {

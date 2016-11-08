@@ -62,7 +62,7 @@ class NeighborhoodHeader extends React.Component {
     if (this.state.photos.length > 0) {
       this.state.photos.forEach(photo => {
         let image = {
-          url: photo.url,
+          url: photo.secure_url,
           user_id: this.props.currentUser.id,
           neighborhood_id: this.props.neighborhood.id
         };
