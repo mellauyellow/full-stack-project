@@ -60,15 +60,17 @@ class NeighborhoodHeader extends React.Component {
 
   componentDidUpdate() {
     if (this.state.photos.length > 0) {
-      let image = {
-        url: this.state.photos[0].url,
-        user_id: this.props.currentUser.id,
-        neighborhood_id: this.props.neighborhood.id
-      };
+      this.state.photos.forEach(photo => {
+        let image = {
+          url: photo.url,
+          user_id: this.props.currentUser.id,
+          neighborhood_id: this.props.neighborhood.id
+        };
 
-      this.props.uploadImage(image, this.props.neighborhood.id);
-      let newPhotoState = this.state.photos.slice(1);
-      this.setState({photos: newPhotoState});
+        this.props.uploadImage(image, this.props.neighborhood.id);
+        let newPhotoState = this.state.photos.slice(1);
+        this.setState({photos: newPhotoState});
+      });
     }
   }
 
@@ -95,21 +97,27 @@ class NeighborhoodHeader extends React.Component {
 
   render() {
     let component = this.determineComponent();
+    let searchResults = `/search-results/${this.props.neighborhood.region_id}`;
     return (
       <div className="neighborhood-header">
-        <h2>{this.props.neighborhood.name}</h2>
-        <div className="neighborhood-header-buttons">
-          <button onClick={this.handleClick(true)}>Write a Review</button>
-          <button onClick={this.cloudinaryUpload}>Add a Photo</button>
-        </div>
+        <div className="neighborhood-header-topline">
+          <h2>{this.props.neighborhood.name}</h2>
+          <div className="neighborhood-header-buttons">
+            <button onClick={this.handleClick(true)}>Write a Review</button>
+            <button onClick={this.cloudinaryUpload}>Add a Photo</button>
+          </div>
 
-        <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.onModalClose}
-          onAfterOpen={this.onModalOpen}>
-          <Link onClick={this.onModalClose} className="close">x</Link>
-          {component}
-        </Modal>
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.onModalClose}
+            onAfterOpen={this.onModalOpen}>
+            <Link onClick={this.onModalClose} className="close">x</Link>
+            {component}
+          </Modal>
+        </div>
+        <Link to={searchResults}>
+          <h5>Back to search results</h5>
+        </Link>
       </div>
     );
   }

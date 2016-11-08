@@ -457,13 +457,19 @@ nav {
 
 .neighborhood-header {
   width: 950px;
-  display: flex;
   margin: 0 auto;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.neighborhood-header-topline {
+  display: flex;
   align-items: center;
 }
 
-.neighborhood-header h2 {
+.neighborhood-header-topline h2 {
   font-weight: 500;
   margin-right: 50px;
   margin-left: 10px;
@@ -485,6 +491,11 @@ nav {
   background: #7795F8;
   border: 3px solid #6772E5;
   cursor: pointer;
+}
+
+.neighborhood-header a {
+  margin-left: 10px;
+  text-decoration: none
 }
 
 .below-neighborhood-header {
@@ -584,11 +595,14 @@ fieldset > h5 {
 }
 
 .neighborhood-map {
-  border: solid red 2px;
+  border: solid black 1px;
   width: 35%;
   height: 300px;
-  padding: 10px;
 }
+/*
+#map * {
+  overflow: visible;
+}*/
 
 .neighborhood-review-index {
   display: flex;
