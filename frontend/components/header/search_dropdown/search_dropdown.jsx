@@ -23,23 +23,36 @@ class SearchDropdown extends React.Component {
       position: "relative"
     };
 
-    let style = {};
+    let classStyle = {};
+    let selectStyle = {};
 
     if (this.props.location === "/") {
-      style = {
+      classStyle = {
         position: "absolute",
-        top: 400
+        top: 400,
+        left: -50
+      };
+      selectStyle = {
+        fontSize: 18,
+        color: "silver",
+        borderRadius: 2,
+        background: 'url(http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif) no-repeat 90% 50%',
+        backgroundColor: "white"
       };
     } else {
-      style = {};
+      selectStyle = {
+        fontSize: 14
+      };
     }
 
     return (
       <div className="regions-dropdown" style={divStyle}>
-        <select style={style} onChange={this.handleChange}>
-          <option>Select a region:</option>
-          {allRegions}
-        </select>
+        <div className="dropdown" style={classStyle}>
+          <select onChange={this.handleChange} style={selectStyle}>
+            <option>Select a region:</option>
+            {allRegions}
+          </select>
+        </div>
       </div>
     );
   }

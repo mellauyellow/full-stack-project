@@ -22,6 +22,7 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onDrop = this.onDrop.bind(this);
+    this.upload = this.upload.bind(this);
   }
 
   onDrop(acceptedFiles, rejectedFiles) {
@@ -33,21 +34,19 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let newReviewState = merge({}, this.state.review);
-    let stateKeys = Object.keys(newReviewState);
-    stateKeys.forEach(key => {
-      if (newReviewState[key] === "null") {
-        delete newReviewState[key];
-      }
+
+    this.props.postReview(this.state.review, this.state.review.neighborhood_id);
+
+    this.state.photos.forEach(photo => {
+      let image = {
+        url: photo.url,
+        user_id: this.state.review.user_id,
+        neighborhood_id: this.state.review.neighborhood_id,
+        // review_id:
+      };
+
+      this.props.uploadImage(image, this.state.review.neighborhood_id);
     });
-
-    if (this.state.photos.length > 0) {
-      this.state.photos.forEach(image => (
-        this.props.uploadImage(image, this.props.neighborhood.id)
-      ));
-    }
-
-    this.props.postReview(newReviewState, newReviewState.neighborhood_id);
 
     this.props.closeModal();
   }
@@ -60,19 +59,24 @@ class ReviewForm extends React.Component {
     };
   }
 
+  upload(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(window.cloudinary_options, (error, images) => {
+      if (!error) {
+        let photos = this.state.photos.slice(0);
+        let newPhotos = photos.concat(images);
+        this.setState({photos: newPhotos});
+      }
+    });
+  }
+
   render() {
     console.log(this.state.photos);
-    let photoPreview;
+    let uploadedImageText;
     if (this.state.photos.length > 0) {
-      let allPhotos = this.state.photos.map((file, idx) => <img src={file.preview} key={idx} />);
-
-      photoPreview =
-        (<div>
-          <h5>Uploading {this.state.photos.length} files...</h5>
-          <div>{allPhotos}</div>
-        </div>);
+      uploadedImageText = <h6>Uploading {this.state.photos.length} photos...</h6>;
     } else {
-      photoPreview = <div></div>;
+      uploadedImageText = <h6></h6>;
     }
 
     return (
@@ -177,14 +181,14 @@ class ReviewForm extends React.Component {
               </div>
             </fieldset>
 
-            <div className="dropzone-container">
-              <Dropzone onDrop={this.onDrop} className="dropzone">
-                <div className="dropzone-text">Click to select files to upload, or drag the files here.</div>
-              </Dropzone>
-              {photoPreview}
-            </div>
+            <button onClick={this.upload}>
+              Upload image
+            </button>
+
+            {uploadedImageText}
 
             <input type="submit" value="Submit Review"></input>
+
 
           </div>
         </form>
@@ -194,3 +198,23 @@ class ReviewForm extends React.Component {
 }
 
 export default ReviewForm;
+
+// <div className="dropzone-container">
+//   <Dropzone onDrop={this.onDrop} className="dropzone">
+//     <div className="dropzone-text">Click to select files to upload, or drag the files here.</div>
+//   </Dropzone>
+//   {photoPreview}
+// </div>
+
+// let photoPreview;
+// if (this.state.photos.length > 0) {
+//   let allPhotos = this.state.photos.map((file, idx) => <img src={file.preview} key={idx} />);
+//
+//   photoPreview =
+//     (<div>
+//       <h5>Uploading {this.state.photos.length} files...</h5>
+//       <div>{allPhotos}</div>
+//     </div>);
+// } else {
+//   photoPreview = <div></div>;
+// }
