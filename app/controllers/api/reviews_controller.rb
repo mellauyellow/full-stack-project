@@ -6,8 +6,17 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    images = params[:review][:images]
 
     if @review.save
+      unless images.nil?
+        image_objects = images.map do |key, image|
+          url = image["url"]
+          user_id = image["user_id"]
+          neighborhood_id = image["neighborhood_id"]
+          @review.images << Image.create(url: url, user_id: user_id, neighborhood_id: neighborhood_id)
+        end
+      end
       render :show
     else
       @errors = @review.errors

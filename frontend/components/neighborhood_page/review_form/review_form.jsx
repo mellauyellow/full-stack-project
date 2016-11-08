@@ -34,20 +34,8 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    this.props.postReview(this.state.review, this.state.review.neighborhood_id);
-
-    this.state.photos.forEach(photo => {
-      let image = {
-        url: photo.url,
-        user_id: this.state.review.user_id,
-        neighborhood_id: this.state.review.neighborhood_id,
-        // review_id:
-      };
-
-      this.props.uploadImage(image, this.state.review.neighborhood_id);
-    });
-
+    let reviewState = merge({}, this.state.review, {images: this.state.photos});
+    this.props.postReview(reviewState, this.state.review.neighborhood_id);
     this.props.closeModal();
   }
 
@@ -63,15 +51,20 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options, (error, images) => {
       if (!error) {
-        let photos = this.state.photos.slice(0);
-        let newPhotos = photos.concat(images);
+        let imageObjects = images.map(photo => {
+          return {
+            url: photo.url,
+            user_id: this.state.review.user_id,
+            neighborhood_id: this.state.review.neighborhood_id
+          };
+        });
+        let newPhotos = this.state.photos.concat(imageObjects);
         this.setState({photos: newPhotos});
       }
     });
   }
 
   render() {
-    console.log(this.state.photos);
     let uploadedImageText;
     if (this.state.photos.length > 0) {
       uploadedImageText = <h6>Uploading {this.state.photos.length} photos...</h6>;

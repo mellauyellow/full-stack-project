@@ -1,9 +1,13 @@
-import { FETCH_REVIEWS, receiveReviews, POST_REVIEW, receiveReview } from '../actions/reviews_actions';
+import { FETCH_REVIEWS, receiveReviews, POST_REVIEW, receiveReview, RECEIVE_REVIEW } from '../actions/reviews_actions';
+import { fetchImages } from '../actions/images_actions';
 import { fetchReviews, postReview } from '../util/reviews_api_util';
 
 const ReviewsMiddleware = ({getState, dispatch}) => next => action => {
   const receiveReviewsSuccess = (reviews) => dispatch(receiveReviews(reviews));
-  const receiveReviewSuccess = (review) => dispatch(receiveReview(review));
+  const receiveReviewSuccess = (review) => {
+    dispatch(receiveReview(review));
+    dispatch(fetchImages(review.neighborhood_id));
+  };
 
   switch (action.type) {
     case FETCH_REVIEWS:

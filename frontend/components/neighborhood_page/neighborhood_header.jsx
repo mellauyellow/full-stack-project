@@ -11,12 +11,14 @@ class NeighborhoodHeader extends React.Component {
     this.state = {
       modalOpen: false,
       reviewForm: true,
-      loggedIn: null
+      loggedIn: null,
+      photos: []
     };
     this.handleClick = this.handleClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
     this.determineComponent = this.determineComponent.bind(this);
     this.handleNextAction = this.handleNextAction.bind(this);
+    this.cloudinaryUpload = this.cloudinaryUpload.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +45,31 @@ class NeighborhoodHeader extends React.Component {
 
   handleNextAction() {
     this.setState({modalOpen: true});
+  }
+
+  cloudinaryUpload(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(window.cloudinary_options, (error, images) => {
+      if (!error) {
+        let photos = this.state.photos.slice(0);
+        let newPhotos = photos.concat(images);
+        this.setState({photos: newPhotos});
+      }
+    });
+  }
+
+  componentDidUpdate() {
+    if (this.state.photos.length > 0) {
+      let image = {
+        url: this.state.photos[0].url,
+        user_id: this.props.currentUser.id,
+        neighborhood_id: this.props.neighborhood.id
+      };
+
+      this.props.uploadImage(image, this.props.neighborhood.id);
+      let newPhotoState = this.state.photos.slice(1);
+      this.setState({photos: newPhotoState});
+    }
   }
 
   determineComponent() {
@@ -73,7 +100,7 @@ class NeighborhoodHeader extends React.Component {
         <h2>{this.props.neighborhood.name}</h2>
         <div className="neighborhood-header-buttons">
           <button onClick={this.handleClick(true)}>Write a Review</button>
-          <button onClick={this.handleClick(false)}>Add a Photo</button>
+          <button onClick={this.cloudinaryUpload}>Add a Photo</button>
         </div>
 
         <Modal
