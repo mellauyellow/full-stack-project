@@ -1,5 +1,6 @@
 import React from 'react';
 import NeighborhoodResultItem from './neighborhood_result_item';
+import SearchResultsMap from './search_results_map';
 
 const Region = ({region}) => {
   const containsNeighborhoodImage = (neighborhoodId) => {
@@ -42,7 +43,7 @@ const Region = ({region}) => {
             <div className="neighborhood-results">
               {neighborhoods}
             </div>
-            <div className="region-map">This is the region map.</div>
+            <SearchResultsMap region={region}/>
           </div>
         </div>
     );

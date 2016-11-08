@@ -141,7 +141,7 @@ user15 = User.create(
                     zip_code: Faker::Address.zip,
                     profile_pic_url: Faker::Avatar.image("test15", "50x50"))
 
-region1 = Region.create(name: "San Francisco", state: "CA")
+region1 = Region.create(name: "San Francisco", state: "CA", center_lat: 37.7575435, center_long: -122.4468722)
 region2 = Region.create(name: "New York", state: "NY")
 region3 = Region.create(name: "Austin", state: "TX")
 region4 = Region.create(name: "Seattle", state: "WA")

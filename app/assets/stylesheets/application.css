@@ -694,7 +694,7 @@ fieldset > h5 {
 }
 
 .neighborhood-results {
-  width: 65%;
+  width: 55%;
   margin-right: 50px;
 }
 
@@ -728,7 +728,7 @@ fieldset > h5 {
 }
 
 .region-map {
-  border: 2px solid red;
-  height: 300px;
-  width: 35%;
+  border: 1px solid black;
+  height: 500px;
+  width: 45%;
 }

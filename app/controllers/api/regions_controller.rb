@@ -12,6 +12,6 @@ class Api::RegionsController < ApplicationController
   private
 
   def region_params
-    params.require(:region).permit(:name, :state)
+    params.require(:region).permit(:name, :state, :center_lat, :center_long)
   end
 end

@@ -6,9 +6,10 @@ class NeighborhoodMap extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const mapDOMNode = this.refs.map;
-    let latInt = parseFloat(nextProps.currentNeighborhood.center_lat);
-    let longInt = parseFloat(nextProps.currentNeighborhood.center_long);
+    const mapDOMNode = this.refs.neighborhoodMap;
+
+    let latInt = nextProps.currentNeighborhood.center_lat;
+    let longInt = nextProps.currentNeighborhood.center_long;
 
     const pos = new google.maps.LatLng(latInt, longInt);
 
@@ -26,7 +27,7 @@ class NeighborhoodMap extends React.Component {
 
   render() {
     return (
-      <div className="neighborhood-map" id="neighborhood-map-container" ref="map">
+      <div className="neighborhood-map" id="neighborhood-map-container" ref="neighborhoodMap">
 
       </div>
     );

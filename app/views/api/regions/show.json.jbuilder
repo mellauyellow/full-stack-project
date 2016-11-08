@@ -1,4 +1,4 @@
-json.extract! @region, :name, :state, :id
+json.extract! @region, :name, :state, :id, :center_lat, :center_long
 
 json.neighborhoods @neighborhoods do |neighborhood|
   json.id neighborhood.id
