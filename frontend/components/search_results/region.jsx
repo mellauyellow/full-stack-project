@@ -1,8 +1,9 @@
 import React from 'react';
 import NeighborhoodResultItem from './neighborhood_result_item';
 import SearchResultsMap from './search_results_map';
+import SearchFilters from './search_filters';
 
-const Region = ({region, router}) => {
+const Region = ({region, router, query}) => {
   const containsNeighborhoodImage = (neighborhoodId) => {
     if (region.images) {
       let allImages = region.images.filter(image => (image.neighborhood_id === neighborhoodId));
@@ -38,6 +39,7 @@ const Region = ({region, router}) => {
 
     return (
         <div className="region-results">
+          <SearchFilters region={region} router={router} query={query}/>
           <h3>Search results for {region.name}, {region.state}:</h3>
           <div className="region-results-content">
             <div className="neighborhood-results">

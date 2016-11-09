@@ -31,11 +31,16 @@ class NeighborhoodHeader extends React.Component {
 
   handleClick(bool) {
     return () => {
-      this.setState({modalOpen: true, reviewForm: bool});
+      if (this.state.loggedIn && !bool) {
+        this.cloudinaryUpload();
+      } else {
+        this.setState({modalOpen: true, reviewForm: bool});
+      }
     };
   }
 
   onModalClose() {
+    console.log('mo clo');
     this.setState({modalOpen: false});
   }
 
@@ -44,11 +49,17 @@ class NeighborhoodHeader extends React.Component {
   }
 
   handleNextAction() {
-    this.setState({modalOpen: true});
+    if (this.state.loggedIn && !this.state.reviewForm) {
+      this.cloudinaryUpload();
+      this.setState({modalOpen: false});
+    } else if (this.state.loggedIn) {
+      this.setState({modalOpen: true});
+    }
   }
 
-  cloudinaryUpload(e) {
-    e.preventDefault();
+  cloudinaryUpload() {
+    // debugger
+    // e.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options, (error, images) => {
       if (!error) {
         let photos = this.state.photos.slice(0);
@@ -104,7 +115,7 @@ class NeighborhoodHeader extends React.Component {
           <h2>{this.props.neighborhood.name}</h2>
           <div className="neighborhood-header-buttons">
             <button onClick={this.handleClick(true)}>Write a Review</button>
-            <button onClick={this.cloudinaryUpload}>Add a Photo</button>
+            <button onClick={this.handleClick(false)}>Add a Photo</button>
           </div>
 
           <Modal

@@ -3,7 +3,8 @@ import Region from './region';
 
 const mapStateToProps = (state, ownProps) => ({
   region: state.region,
-  router: ownProps.router
+  router: ownProps.router,
+  query: ownProps.location.query
 });
 
 const mapDispatchToProps = dispatch => ({
