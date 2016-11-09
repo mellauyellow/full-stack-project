@@ -4,6 +4,7 @@ class Api::RegionsController < ApplicationController
   end
 
   def show
+    # debugger
     @region = Region.find_by_id(params[:id])
     @neighborhoods = @region.neighborhoods
     @images = @region.images.where(neighborhood_rep: true)

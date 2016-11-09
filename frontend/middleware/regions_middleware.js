@@ -10,7 +10,7 @@ const RegionsMiddleware = ({getState, dispatch}) => next => action => {
       fetchRegions(fetchRegionsSuccess);
       return next(action);
     case FETCH_REGION:
-      fetchRegion(action.regionId, fetchRegionSuccess);
+      fetchRegion(action.regionId, action.filters, fetchRegionSuccess);
       return next(action);
     default:
       return next(action);

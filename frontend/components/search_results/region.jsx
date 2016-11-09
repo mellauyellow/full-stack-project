@@ -54,7 +54,7 @@ class Region extends React.Component {
 
     return (
       <div className="region-results">
-        <SearchFilters region={this.props.region} router={this.props.router} query={this.props.query}/>
+        <SearchFilters region={this.props.region} router={this.props.router} query={this.props.query} fetchRegion={this.props.fetchRegion}/>
         <h3>Search results for {this.props.region.name}, {this.props.region.state}:</h3>
         <div className="region-results-content">
           <div className="neighborhood-results">
@@ -66,47 +66,5 @@ class Region extends React.Component {
     );
   }
 }
-//
-// const Region = ({region, router, query}) => {
-//   const containsNeighborhoodImage = (neighborhoodId) => {
-//     if (region.images) {
-//       let allImages = region.images.filter(image => (image.neighborhood_id === neighborhoodId));
-//       if (allImages.length > 0) {
-//         return allImages;
-//       } else {
-//         return null;
-//       }
-//     } else {
-//       return null;
-//     }
-//   };
-//
-//   if (region.neighborhoods) {
-//     let neighborhoods = region.neighborhoods.map((neighborhood, idx) => {
-//       let image = containsNeighborhoodImage(neighborhood.id);
-//
-//       let imageItem = <div></div>;
-//       if (image) {
-//         let style = {
-//           backgroundImage: 'url(' + image[0].url + ')'
-//         };
-//         imageItem = <div style={style}></div>;
-//       }
-//
-//       return (
-//         <div className="neighborhood-result-item" key={idx}>
-//           {imageItem}
-//           <NeighborhoodResultItem neighborhood={neighborhood}/>
-//         </div>
-//       );
-//     });
-//
-//     return (
-//
-//     );
-//   } else {
-//     return (<div></div>);
-//   }
-// };
 
 export default Region;

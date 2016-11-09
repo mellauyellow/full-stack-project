@@ -12,9 +12,10 @@ export const receiveRegions = (regions) => ({
   regions
 });
 
-export const fetchRegion = (regionId) => ({
+export const fetchRegion = (regionId, filters) => ({
   type: FETCH_REGION,
-  regionId
+  regionId,
+  filters
 });
 
 export const receiveRegion = (region) => ({

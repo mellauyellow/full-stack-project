@@ -40,7 +40,6 @@ class NeighborhoodHeader extends React.Component {
   }
 
   onModalClose() {
-    console.log('mo clo');
     this.setState({modalOpen: false});
   }
 
