@@ -34,7 +34,7 @@ const Root = ({store}) => {
           <Route path="neighborhood/:id" component={NeighborhoodPageContainer} onEnter={_fetchSingleNeighborhood}/>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SignupFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/search-results/:id" component={RegionContainer} onEnter={_fetchSingleRegion}/>
+          <Route path="/search-results/:id" component={RegionContainer}/>
         </Route>
       </Router>
     </Provider>

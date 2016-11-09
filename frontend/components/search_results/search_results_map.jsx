@@ -7,11 +7,11 @@ class SearchResultsMap extends React.Component {
     this.addNeighborhoodMarker = this.addNeighborhoodMarker.bind(this);
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
     const mapDOMNode = this.refs.regionMap;
 
-    let latInt = this.props.region.center_lat;
-    let longInt = this.props.region.center_long;
+    let latInt = nextProps.region.center_lat;
+    let longInt = nextProps.region.center_long;
 
     const pos = new google.maps.LatLng(latInt, longInt);
 
@@ -21,9 +21,11 @@ class SearchResultsMap extends React.Component {
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
-    this.props.region.neighborhoods.forEach(neighborhood => (
-      this.addNeighborhoodMarker(neighborhood)
-    ));
+    if (nextProps.region.neighborhoods) {
+      nextProps.region.neighborhoods.forEach(neighborhood => (
+        this.addNeighborhoodMarker(neighborhood)
+      ));
+    }
   }
 
   addNeighborhoodMarker(neighborhood) {
@@ -52,22 +54,6 @@ class SearchResultsMap extends React.Component {
       infowindow.close()
     ));
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   const mapDOMNode = this.refs.regionMap;
-  //
-  //   let latInt = nextProps.region.center_lat;
-  //   let longInt = nextProps.region.center_long;
-  //
-  //   const pos = new google.maps.LatLng(latInt, longInt);
-  //
-  //   const mapOptions = {
-  //     center: pos,
-  //     zoom: 8
-  //   };
-  //
-  //   this.map = new google.maps.Map(mapDOMNode, mapOptions);
-  // }
 
   render()  {
     return (

@@ -8,17 +8,18 @@ class SearchFilters extends React.Component {
       transit_score: "",
       cost_of_living: ""
     };
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.determineFieldSelect = this.determineFieldSelect.bind(this);
   }
 
   handleChange(field) {
     return (e) => {
-      let filter = e.target.value;
-      let path = `/search-results/${this.props.region.id}`;
-      let query = {[field]: filter};
-      this.props.router.push({pathname: path, query: query});
+      // let filter = e.target.value;
+      // let path = `/search-results/${this.props.region.id}`;
+      // let query = {[field]: filter};
+      // this.props.router.push({pathname: path, query: query});
+      this.setState({[field]: e.target.value});
     };
   }
 
