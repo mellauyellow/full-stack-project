@@ -1,7 +1,9 @@
 import React from 'react';
 import { merge } from 'lodash';
+import Region from './region';
+import SearchResultsMap from './search_results_map';
 
-class SearchFilters extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,29 +16,39 @@ class SearchFilters extends React.Component {
     this.determineFieldSelect = this.determineFieldSelect.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   let newState = merge({}, this.state);
-  //   let newStateKeys = Object.keys(newState);
-  //   newStateKeys.forEach(key => {
-  //     if (newState[key] === "default") {
-  //       delete newState[key];
-  //     }
-  //   });
-  //
-  //   this.props.fetchRegion(this.props.region.id, newState);
+  componentDidMount() {
+    let stateKeys = Object.keys(this.state);
+    let stateArray = stateKeys.map(key => (`${key}=${this.state[key]}`));
+    let stateString = stateArray.join("&");
+    this.props.fetchRegion(this.props.params.id, stateString);
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   let stateKeys = Object.keys(this.state);
+  //   let stateArray = stateKeys.map(key => (`${key}=${this.state[key]}`));
+  //   let stateString = stateArray.join("&");
+  //   console.log(stateString);
+  //   this.props.fetchRegion(this.props.params.id, stateString);
   // }
 
   handleChange(field) {
     return (e) => {
-      // let filter = e.target.value;
+      let callback = () => {
+        let stateKeys = Object.keys(this.state);
+        let stateArray = stateKeys.map(key => (`${key}=${this.state[key]}`));
+        let stateString = stateArray.join("&");
+        this.props.fetchRegion(this.props.params.id, stateString);
+      };
+
+      let filter = e.target.value;
       // let path = `/search-results/${this.props.region.id}`;
       // let query = {[field]: filter};
       // this.props.router.push({pathname: path, query: query});
 
       if (field === "cost_of_living") {
-        this.setState({[field]: parseInt(e.target.value)});
+        this.setState({[field]: parseInt(filter)}, callback);
       } else {
-        this.setState({[field]: e.target.value});
+        this.setState({[field]: filter}, callback);
       }
     };
   }
@@ -52,6 +64,8 @@ class SearchFilters extends React.Component {
   render() {
     return (
       <div className="search-filters">
+        <h3>Search results for {this.props.region.name}, {this.props.region.state}:</h3>
+
         <form className="search-filters-form">
           <label>
             <h5>Walk score:</h5>
@@ -84,9 +98,14 @@ class SearchFilters extends React.Component {
             </select>
           </label>
         </form>
+
+        <div className="region-results-content">
+          <Region fetchRegion={this.props.fetchRegion} params={this.props.params} region={this.props.region}/>
+          <SearchResultsMap region={this.props.region} router={this.props.router}/>
+        </div>
       </div>
     );
   }
 }
 
-export default SearchFilters;
+export default Search;

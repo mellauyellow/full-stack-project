@@ -7,7 +7,7 @@ import SessionFormContainer from './header/session/session_form_container';
 import SplashContainer from './splash/splash_container';
 import NeighborhoodPageContainer from './neighborhood_page/neighborhood_page_container';
 import { fetchNeighborhood } from '../actions/neighborhoods_actions';
-import RegionContainer from './search_results/region_container';
+import SearchContainer from './search_results/search_container';
 import {fetchRegion } from '../actions/regions_actions';
 
 const Root = ({store}) => {
@@ -34,7 +34,7 @@ const Root = ({store}) => {
           <Route path="neighborhood/:id" component={NeighborhoodPageContainer} onEnter={_fetchSingleNeighborhood}/>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SignupFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/search-results/:id" component={RegionContainer}/>
+          <Route path="/search-results/:id" component={SearchContainer}/>
         </Route>
       </Router>
     </Provider>

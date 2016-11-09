@@ -57,8 +57,6 @@ class NeighborhoodHeader extends React.Component {
   }
 
   cloudinaryUpload() {
-    // debugger
-    // e.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options, (error, images) => {
       if (!error) {
         let photos = this.state.photos.slice(0);

@@ -677,7 +677,7 @@ fieldset > h5 {
 
 /*SEARCH RESULTS*/
 
-.region-results {
+.search-filters {
   display: flex;
   flex-direction: column;
   width: 950px;
@@ -685,15 +685,25 @@ fieldset > h5 {
   padding: 15px;
 }
 
-.region-results h3 {
-  margin-bottom: 10px;
+.search-filters-form {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.search-filters-form label {
+  margin-right: 20px;
 }
 
 .region-results-content {
   display: flex;
 }
 
-.neighborhood-results {
+.region-results h3 {
+  margin-bottom: 10px;
+}
+
+
+.region-results {
   width: 55%;
   margin-right: 50px;
 }
@@ -731,6 +741,7 @@ fieldset > h5 {
   border: 1px solid black;
   height: 500px;
   width: 45%;
+  margin-top: 20px;
 }
 
 .gm-style-iw {

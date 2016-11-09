@@ -1,7 +1,5 @@
 import React from 'react';
 import NeighborhoodResultItem from './neighborhood_result_item';
-import SearchResultsMap from './search_results_map';
-import SearchFilters from './search_filters';
 
 class Region extends React.Component {
   constructor(props) {
@@ -10,10 +8,10 @@ class Region extends React.Component {
     this.containsNeighborhoodImage = this.containsNeighborhoodImage.bind(this);
     this.neighborhoodsElements = this.neighborhoodsElements.bind(this);
   }
-
-  componentDidMount() {
-    this.props.fetchRegion(this.props.params.id);
-  }
+  //
+  // componentDidMount() {
+  //   this.props.fetchRegion(this.props.params.id);
+  // }
 
   containsNeighborhoodImage(neighborhoodId) {
     if (this.props.region.images) {
@@ -52,18 +50,17 @@ class Region extends React.Component {
   render() {
     let neighborhoods = this.neighborhoodsElements();
 
-    return (
-      <div className="region-results">
-        <SearchFilters region={this.props.region} router={this.props.router} query={this.props.query} fetchRegion={this.props.fetchRegion}/>
-        <h3>Search results for {this.props.region.name}, {this.props.region.state}:</h3>
-        <div className="region-results-content">
+    if (this.props.region) {
+      return (
+        <div className="region-results">
           <div className="neighborhood-results">
             {neighborhoods}
           </div>
-          <SearchResultsMap region={this.props.region} router={this.props.router}/>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (<div></div>);
+    }
   }
 }
 

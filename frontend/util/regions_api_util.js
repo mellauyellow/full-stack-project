@@ -10,8 +10,7 @@ export const fetchRegions = (success, error) => {
 export const fetchRegion = (regionId, filters, success, error) => {
   $.ajax({
   method: 'GET',
-  url: `api/regions/${regionId}`,
-  data: {filters},
+  url: `api/regions/${regionId}?${filters}`,
   success,
   error
   });
