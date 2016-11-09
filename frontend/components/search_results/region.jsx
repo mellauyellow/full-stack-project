@@ -43,7 +43,11 @@ class Region extends React.Component {
         );
       });
 
-      return neighborhoods;
+      if (neighborhoods.length > 0) {
+        return neighborhoods;
+      } else {
+        return <h4>No matches.</h4>;
+      }
     }
   }
 
