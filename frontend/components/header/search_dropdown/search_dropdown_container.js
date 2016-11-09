@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SearchDropdown from './search_dropdown';
-import { fetchRegions } from '../../../actions/regions_actions';
+import { fetchRegions, fetchRegion } from '../../../actions/regions_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   regions: state.regions,
@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRegions: () => dispatch(fetchRegions())
+  fetchRegions: () => dispatch(fetchRegions()),
+  fetchRegion: (id, filters) => dispatch(fetchRegion(id, filters))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchDropdown);

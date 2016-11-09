@@ -9,9 +9,12 @@ class SearchDropdown extends React.Component {
   }
 
   handleChange(e) {
+    let defaultFilters = "walk_score=default&transit_score=default&cost_of_living=default";
+
     let regionId = e.target.value;
     let path = `/search-results/${regionId}`;
     this.props.router.push(path);
+    this.props.fetchRegion(regionId, defaultFilters);
   }
 
   render() {

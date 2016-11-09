@@ -55,7 +55,8 @@ h6 {
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  /*font-family: 'Rubik', sans-serif;*/
+  font-family: 'Hind', sans-serif;
 }
 
 .app {
@@ -157,7 +158,8 @@ nav {
   width: 130%;
   border: none;
   box-shadow: none;
-  font-family: 'Rubik', sans-serif;
+  /*font-family: 'Rubik', sans-serif;*/
+  font-family: 'Hind', sans-serif;
   background-color: transparent;
   background-image: none;
   -webkit-appearance: none;
