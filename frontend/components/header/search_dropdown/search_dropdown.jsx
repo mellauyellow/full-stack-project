@@ -33,7 +33,7 @@ class SearchDropdown extends React.Component {
       classStyle = {
         position: "absolute",
         top: 400,
-        left: -50,
+        left: -30,
         backgroundColor: "white"
       };
       selectStyle = {

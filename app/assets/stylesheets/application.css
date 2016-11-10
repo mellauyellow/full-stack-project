@@ -26,20 +26,33 @@ fieldset {
   vertical-align: baseline;
 }
 
+body {
+  /*font-family: 'Rubik', sans-serif;*/
+  /*font-family: 'Hind', sans-serif;*/
+  /*font-family: 'Yantramanav', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+}
+
 ol, ul {
   list-style: none;
 }
 
 h1 {
   font-size: 48px;
+  font-family: 'Hind', sans-serif;
+
 }
 
 h2 {
   font-size: 36px;
+  font-family: 'Hind', sans-serif;
+
 }
 
 h3 {
   font-size: 24px;
+  font-family: 'Hind', sans-serif;
+
 }
 
 h4 {
@@ -54,11 +67,6 @@ h6 {
   font-size: 12px;
 }
 
-body {
-  /*font-family: 'Rubik', sans-serif;*/
-  font-family: 'Hind', sans-serif;
-}
-
 .app {
   /*border-bottom: 1px solid silver;*/
 }
@@ -71,7 +79,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0px;
+  padding: 10px 0px;
 }
 
 .logo-and-name {
@@ -83,20 +91,14 @@ nav {
   display: flex;
   align-items: center;
   text-decoration: none;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  padding: 10px 5px;
-  margin-left: 10px;
+  color: black;
 }
 
 .company-name {
   padding: 10px 5px;
   font-weight: 500;
-  font-size: 24px;
-  color: #317cff;
+  font-family: 'Special Elite', sans-serif;
+  font-size: 26px;
 }
 
 .auth-not-logged-in {
@@ -117,31 +119,31 @@ nav {
   padding: 10px;
   font-size: 14px;
   font-weight: 400;
-  color: black;
+  color: silver;
   align-content: center;
-  border: solid white 2px;
+  border: solid transparent 1px;
   border-radius: 2px;
-  background: white;
+  background: transparent;
 }
 
 .auth-not-logged-in a:hover {
   color: white;
   background-color: #6772E5;
-  border: solid 2px #6772E5;
+  border: solid 1px #6772E5;
   border-radius: 2px;
   cursor: pointer;
 }
 
 .guest-link > a {
-  border: solid 2px silver;
-  background-color: white;
+  border: solid 1px silver;
+  background-color: transparent;
   border-radius: 2px;
 }
 
 .guest-link > a:hover {
-  border: solid 2px black;
-  background-color: white;
-  color: black;
+  border: solid 1px #6772E5;
+  background-color: transparent;
+  color: #6772E5;
 }
 
 .dropdown {
@@ -159,7 +161,9 @@ nav {
   border: none;
   box-shadow: none;
   /*font-family: 'Rubik', sans-serif;*/
-  font-family: 'Hind', sans-serif;
+  /*font-family: 'Hind', sans-serif;*/
+  /*font-family: 'Yantramanav', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
   background-color: transparent;
   background-image: none;
   -webkit-appearance: none;
@@ -351,26 +355,27 @@ nav {
 
 /*SPLASH*/
 
-/*.background_image {
-  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_3171/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
-  background-color: #000000;
-  background-size: cover;
-  height: 500px;
-  color: white;
-}*/
+.children > div {
+  margin: 0 auto;
+  position: relative;
+}
 
 .background_image {
   background:
     /* top, transparent red, faked with gradient */
     linear-gradient(
-      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.25)
     ),
     /* bottom, image */
-    url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_3171/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+    url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_2211/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
   background-size: cover;
-  height: 500px;
+  height: 600px;
   color: white;
+  position: absolute;
+  top: -70px;
+  width: 100%;
+  z-index: -1;
 }
 
 .background_image section {
@@ -380,17 +385,16 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 150px;
 }
 
 .background_image h1 {
-  font-weight: 500;
-  padding: 50px 0px 15px 0px;
+  font-weight: 700;
   text-shadow: 0px 0px 1px #000000;
 }
 
 .background_image h2 {
   font-weight: 400;
-  /*padding: 15px;*/
   text-shadow: 0px 0px 2px #000000;
 }
 
