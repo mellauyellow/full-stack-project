@@ -8,7 +8,8 @@ class SearchForm extends React.Component {
       filters: {
         walk_score: "default",
         transit_score: "default",
-        cost_of_living: "default"
+        cost_of_living: "default",
+        most_like: "default"
       },
       searchForm: "hidden"
     };
@@ -16,6 +17,8 @@ class SearchForm extends React.Component {
     this.toggleSearchForm = this.toggleSearchForm.bind(this);
     this.determineFieldSelect = this.determineFieldSelect.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleRegionChange = this.handleRegionChange.bind(this);
+    this.neighborhoodSearchOptions = this.neighborhoodSearchOptions.bind(this);
   }
 
   toggleSearchForm(e) {
@@ -53,6 +56,25 @@ class SearchForm extends React.Component {
     };
   }
 
+  handleRegionChange(e) {
+    e.preventDefault();
+    let regionId = e.target.value;
+    let defaultQueryString = "walk_score=default&transit_score=default&cost_of_living=default&most_like=default";
+    this.props.fetchSearchRegion(regionId, defaultQueryString);
+  }
+
+  neighborhoodSearchOptions() {
+    if (this.props.search.neighborhoods) {
+      let neighborhoods = this.props.search.neighborhoods.map((neighborhood, idx) => (
+        <option key={idx} value={neighborhood.id}>{neighborhood.name}</option>
+      ));
+
+      return neighborhoods;
+    } else {
+      return <option>Select a region</option>;
+    }
+  }
+
   render() {
     return (
       <div className="search-filters-button-form">
@@ -81,13 +103,29 @@ class SearchForm extends React.Component {
             </label>
 
             <label>
-              <h5>Cost of Living:</h5>
+              <h5>Cost of living:</h5>
               <select value={this.determineFieldSelect("cost_of_living")} onChange={this.handleChange("cost_of_living")}>
                 <option value="default">all</option>
                 <option value="1">$</option>
                 <option value="2">$$</option>
                 <option value="3">$$$</option>
                 <option value="4">$$$$</option>
+              </select>
+            </label>
+
+            <label>
+              <h5>Most like:</h5>
+              <select onChange={this.handleRegionChange}>
+                <option value="default">Region</option>
+                <option value="1">San Francisco</option>
+                <option value="2">New York</option>
+                <option value="3">Los Angeles</option>
+                <option value="4">Chicago</option>
+              </select>
+
+              <select onChange={this.handleChange("most_like")}>
+                <option>Neighborhood</option>
+                {this.neighborhoodSearchOptions()}
               </select>
             </label>
           </form>

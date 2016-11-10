@@ -15,10 +15,17 @@ class SearchResultsMap extends React.Component {
 
     const pos = new google.maps.LatLng(latInt, longInt);
 
-    const mapOptions = {
+    let mapOptions = {
       center: pos,
-      zoom: 12
+      zoom: 10
     };
+
+    if (latInt === 37.7575435) {
+      mapOptions = {
+        center: pos,
+        zoom: 12
+      };
+    }
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     if (nextProps.region.neighborhoods) {

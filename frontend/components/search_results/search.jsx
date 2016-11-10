@@ -11,7 +11,8 @@ class Search extends React.Component {
       filters: {
         walk_score: "default",
         transit_score: "default",
-        cost_of_living: "default"
+        cost_of_living: "default",
+        most_like: "default"
       },
       searchForm: "hidden"
     };
@@ -29,7 +30,7 @@ class Search extends React.Component {
       <div className="search-filters">
         <div className="search-header">
           <h3>Search results for {this.props.region.name}, {this.props.region.state}:</h3>
-          <SearchForm fetchRegion={this.props.fetchRegion} params={this.props.params}/>
+          <SearchForm fetchRegion={this.props.fetchRegion} params={this.props.params} fetchSearchRegion={this.props.fetchSearchRegion} search={this.props.search}/>
         </div>
 
         <div className="region-results-content">

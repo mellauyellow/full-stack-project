@@ -6,6 +6,7 @@ import NeighborhoodReducer from './neighborhood_reducer';
 import ReviewsReducer from './reviews_reducer';
 import ImagesReducer from './images_reducer';
 import RegionReducer from './region_reducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   neighborhoods: NeighborhoodsReducer,
   neighborhood: NeighborhoodReducer,
   reviews: ReviewsReducer,
-  images: ImagesReducer
+  images: ImagesReducer,
+  search: SearchReducer
 });
 
 export default RootReducer;
