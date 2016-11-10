@@ -473,17 +473,59 @@ nav {
 .slick-prev {
   position: absolute;
   top: 250px;
-  left: -20px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
   background-color: white;
-  color: #6772E5
-}
+  color: transparent;
+  content: ">";
+  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  outline-style: none;
+  transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+    -moz-transform: rotate(180deg);        /* FF */
+    -o-transform: rotate(180deg);          /* Opera */
+    -ms-transform: rotate(180deg);         /* IE9 */
+  }
 
 .slick-next {
   position: absolute;
   top: 250px;
-  right: -20px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
   background-color: white;
-  color: #6772E5
+  color: transparent;
+  content: ">";
+  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  outline-style: none;
+}
+
+.slick-next:hover {
+  cursor: pointer;
+}
+
+.slick-prev:hover {
+  cursor: pointer;
+}
+
+.slick-next:before {
+  content: ">" !important;
+  display: none;
+}
+
+.slick-prev:before {
+  display: none;
+}
+
+.slick-prev:after {
+  display: none;
 }
 
 .image-slide {
@@ -554,22 +596,24 @@ nav {
 
 .review-form h3 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .review-form form > label {
-  margin-right: 80px;
+  margin-right: 60px;
 }
 
 .review-form textarea {
   width: 250px;
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid silver;
   font-size: 12px;
   resize: none;
+  padding: 5px;
 }
 
-.review-form h5 {
-  font-weight: 500;
+.review-form-field-header {
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
@@ -601,28 +645,32 @@ fieldset > h5 {
   margin-right: 10px;
 }
 
-/*.dropzone-container {
+.review-form-buttons {
   display: flex;
+  flex-direction: column;
 }
 
-.dropzone {
-  width: 200px;
-  height: 150px;
-  margin-right: 20px;
-  border: 2px black dashed;
+.review-form-image-section {
+  display: flex;
+  align-items: baseline;
+}
+
+.review-form-image-section button {
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px;
+  border: 2px solid silver;
   border-radius: 2px;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 10px;
 }
 
-.dropzone-text {
-  padding: 10px;
-  font-size: 13px;
+.review-form-image-section button:hover {
+  border: 2px solid #6772E5;
 }
-
-.dropzone-container img {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-}*/
 
 /*NEIGHBORHOOD PAGE CONTENT*/
 
@@ -637,10 +685,6 @@ fieldset > h5 {
   width: 35%;
   height: 300px;
 }
-/*
-#map * {
-  overflow: visible;
-}*/
 
 .neighborhood-review-index {
   display: flex;

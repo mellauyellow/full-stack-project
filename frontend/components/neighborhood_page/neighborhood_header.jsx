@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ReviewForm from './review_form/review_form';
 import NotLoggedIn from './not_logged_in';
 import SessionFormContainer from '../header/session/session_form_container';
+import ModalStyle from './review_modal_style';
 
 class NeighborhoodHeader extends React.Component {
   constructor(props) {
@@ -41,6 +42,11 @@ class NeighborhoodHeader extends React.Component {
 
   onModalClose() {
     this.setState({modalOpen: false});
+    ModalStyle.content.opacity = 0;
+  }
+
+  onModalOpen() {
+    ModalStyle.content.opacity = 100;
   }
 
   checkLogin() {
@@ -118,6 +124,7 @@ class NeighborhoodHeader extends React.Component {
           <Modal
             isOpen={this.state.modalOpen}
             onRequestClose={this.onModalClose}
+            style={ModalStyle}
             onAfterOpen={this.onModalOpen}>
             <Link onClick={this.onModalClose} className="close">x</Link>
             {component}

@@ -21,15 +21,7 @@ class ReviewForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.onDrop = this.onDrop.bind(this);
     this.upload = this.upload.bind(this);
-  }
-
-  onDrop(acceptedFiles, rejectedFiles) {
-    let photos = this.state.photos.slice(0);
-    // acceptedFiles.forEach(file => {})
-    let newPhotos = photos.concat(acceptedFiles);
-    this.setState({photos: newPhotos});
   }
 
   handleSubmit(e) {
@@ -66,8 +58,10 @@ class ReviewForm extends React.Component {
 
   render() {
     let uploadedImageText;
-    if (this.state.photos.length > 0) {
+    if (this.state.photos.length > 1) {
       uploadedImageText = <h6>Uploading {this.state.photos.length} photos...</h6>;
+    } else if (this.state.photos.length === 1) {
+      uploadedImageText = <h6>Uploading {this.state.photos.length} photo...</h6>;
     } else {
       uploadedImageText = <h6></h6>;
     }
@@ -77,12 +71,12 @@ class ReviewForm extends React.Component {
         <h3>Write a review for the {this.props.neighborhood.name} neighborhood</h3>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <h5>Your review:</h5>
+            <h5 className="review-form-field-header">Your review:</h5>
             <textarea wrap="soft" value={this.state.body} onChange={this.handleChange("body")} placeholder="Help others learn about the neighborhood."></textarea>
           </label>
 
           <div className="review-questions">
-            <h5>Survey questions (optional): </h5>
+            <h5 className="review-form-field-header">Survey questions (optional): </h5>
 
             <fieldset className="good_for_families">
               <h5>Good for families?</h5>
@@ -174,13 +168,15 @@ class ReviewForm extends React.Component {
               </div>
             </fieldset>
 
-            <button onClick={this.upload}>
-              Upload image
-            </button>
-
-            {uploadedImageText}
-
-            <input type="submit" value="Submit Review"></input>
+            <div className="review-form-buttons">
+              <div className="review-form-image-section">
+                <button onClick={this.upload}>
+                  Upload image
+                </button>
+                {uploadedImageText}
+              </div>
+              <input type="submit" value="Submit Review"></input>
+            </div>
 
 
           </div>
@@ -191,23 +187,3 @@ class ReviewForm extends React.Component {
 }
 
 export default ReviewForm;
-
-// <div className="dropzone-container">
-//   <Dropzone onDrop={this.onDrop} className="dropzone">
-//     <div className="dropzone-text">Click to select files to upload, or drag the files here.</div>
-//   </Dropzone>
-//   {photoPreview}
-// </div>
-
-// let photoPreview;
-// if (this.state.photos.length > 0) {
-//   let allPhotos = this.state.photos.map((file, idx) => <img src={file.preview} key={idx} />);
-//
-//   photoPreview =
-//     (<div>
-//       <h5>Uploading {this.state.photos.length} files...</h5>
-//       <div>{allPhotos}</div>
-//     </div>);
-// } else {
-//   photoPreview = <div></div>;
-// }
