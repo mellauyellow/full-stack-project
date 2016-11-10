@@ -14,8 +14,8 @@ const NeighborhoodImagesSlideshow = ({images}) => {
       return (
         <div key={idx}>
           <NeighborhoodImagesSlide image={images[key]} />
-          <h5>{userName}</h5>
-          <h5>{images[key].caption}</h5>
+          <h5>{'"' + images[key].caption + '"'}</h5>
+          <h6>{userName}</h6>
         </div>
       );
     });
