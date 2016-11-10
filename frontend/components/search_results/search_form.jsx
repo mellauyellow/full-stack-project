@@ -83,50 +83,61 @@ class SearchForm extends React.Component {
         <div className={this.state.searchForm}>
           <form className="search-filters-form">
             <label>
-              <h5>Walk score:</h5>
-              <select value={this.determineFieldSelect("walk_score")} onChange={this.handleChange("walk_score")}>
-                <option value="default">all</option>
-                <option value="high">high</option>
-                <option value="med">medium</option>
-                <option value="low">low</option>
-              </select>
+              <h6>Walk score:</h6>
+              <div className="search-filters-form-select">
+                <select value={this.determineFieldSelect("walk_score")} onChange={this.handleChange("walk_score")}>
+                  <option value="default">all</option>
+                  <option value="high">high</option>
+                  <option value="med">medium</option>
+                  <option value="low">low</option>
+                </select>
+              </div>
             </label>
 
             <label>
-              <h5>Transit score:</h5>
-              <select value={this.determineFieldSelect("transit_score")} onChange={this.handleChange("transit_score")}>
-                <option value="default">all</option>
-                <option value="high">high</option>
-                <option value="med">medium</option>
-                <option value="low">low</option>
-              </select>
+              <h6>Transit score:</h6>
+              <div className="search-filters-form-select">
+                <select value={this.determineFieldSelect("transit_score")} onChange={this.handleChange("transit_score")}>
+                  <option value="default">all</option>
+                  <option value="high">high</option>
+                  <option value="med">medium</option>
+                  <option value="low">low</option>
+                </select>
+              </div>
             </label>
 
             <label>
-              <h5>Cost of living:</h5>
-              <select value={this.determineFieldSelect("cost_of_living")} onChange={this.handleChange("cost_of_living")}>
-                <option value="default">all</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-                <option value="4">$$$$</option>
-              </select>
+              <h6>Cost of living:</h6>
+              <div className="search-filters-form-select">
+                <select value={this.determineFieldSelect("cost_of_living")} onChange={this.handleChange("cost_of_living")}>
+                  <option value="default">all</option>
+                  <option value="1">$</option>
+                  <option value="2">$$</option>
+                  <option value="3">$$$</option>
+                  <option value="4">$$$$</option>
+                </select>
+              </div>
             </label>
 
             <label>
-              <h5>Most like:</h5>
-              <select onChange={this.handleRegionChange}>
-                <option value="default">Region</option>
-                <option value="1">San Francisco</option>
-                <option value="2">New York</option>
-                <option value="3">Los Angeles</option>
-                <option value="4">Chicago</option>
-              </select>
+              <h6>Most like:</h6>
+              <div className="search-filters-form-select-region">
+                <select onChange={this.handleRegionChange}>
+                  <option value="default">Region</option>
+                  <option value="1">San Francisco</option>
+                  <option value="2">New York</option>
+                  <option value="3">Los Angeles</option>
+                  <option value="4">Chicago</option>
+                </select>
+              </div>
 
-              <select onChange={this.handleChange("most_like")}>
-                <option>Neighborhood</option>
-                {this.neighborhoodSearchOptions()}
-              </select>
+              <div className="search-filters-form-select-neighborhood">
+                <select onChange={this.handleChange("most_like")}>
+                  <option>Neighborhood</option>
+                  {this.neighborhoodSearchOptions()}
+                </select>
+              </div>
+
             </label>
           </form>
         </div>

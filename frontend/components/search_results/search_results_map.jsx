@@ -25,6 +25,8 @@ class SearchResultsMap extends React.Component {
         center: pos,
         zoom: 12
       };
+    } else if (latInt === 40.741218) {
+      mapOptions.zoom = 11;
     }
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);

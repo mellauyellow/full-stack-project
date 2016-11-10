@@ -9,7 +9,7 @@ class SearchDropdown extends React.Component {
   }
 
   handleChange(e) {
-    let defaultFilters = "walk_score=default&transit_score=default&cost_of_living=default";
+    let defaultFilters = "walk_score=default&transit_score=default&cost_of_living=default&most_like=default";
 
     let regionId = e.target.value;
     let path = `/search-results/${regionId}`;

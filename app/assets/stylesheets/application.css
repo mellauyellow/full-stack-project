@@ -725,8 +725,8 @@ fieldset > h5 {
 
 .search-filters-button-form {
   display: flex;
-  align-items: center;
-  height: 50px;
+  flex-direction: column;
+  align-items: flex-start;
   align-self: flex-start;
 }
 
@@ -736,16 +736,92 @@ fieldset > h5 {
 
 .search-filters-form {
   display: flex;
-  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .search-filters-form label {
   margin-right: 20px;
   display: flex;
+  align-items: center;
 }
 
-.search-filters-form h5 {
+.search-filters-form h6 {
   margin-right: 10px;
+}
+
+.search-filters-form-select {
+  border: 1px solid silver;
+  /*width: 200px;*/
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: white;
+  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+}
+
+.search-filters-form-select select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  /*font-family: 'Rubik', sans-serif;*/
+  /*font-family: 'Hind', sans-serif;*/
+  /*font-family: 'Yantramanav', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.search-filters-form-select-region {
+  border: 1px solid silver;
+  width: 120px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: white;
+  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+}
+
+.search-filters-form-select-region select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  /*font-family: 'Rubik', sans-serif;*/
+  /*font-family: 'Hind', sans-serif;*/
+  /*font-family: 'Yantramanav', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.search-filters-form-select-neighborhood {
+  border: 1px solid silver;
+  width: 200px;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: white;
+  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+}
+
+.search-filters-form-select-neighborhood select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  /*font-family: 'Rubik', sans-serif;*/
+  /*font-family: 'Hind', sans-serif;*/
+  /*font-family: 'Yantramanav', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .region-results-content {
