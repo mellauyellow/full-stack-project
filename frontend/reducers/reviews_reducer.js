@@ -1,15 +1,31 @@
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW } from '../actions/reviews_actions';
+import { RECEIVE_REVIEWS, RECEIVE_REVIEW, RECEIVE_REVIEW_ERRORS, CLEAR_REVIEW_ERRORS } from '../actions/reviews_actions';
+import { merge } from 'lodash';
 
-const _nullState = [];
+const _nullState = {
+  allReviews: [],
+  errors: {}
+};
 
 const ReviewsReducer = (oldState = _nullState, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_REVIEWS:
-      return action.reviews;
+      let newState = merge({}, oldState);
+      newState.allReviews = action.reviews;
+      return newState;
     case RECEIVE_REVIEW:
-      let newState = oldState.slice(0);
-      newState.push(action.review);
+      newState = merge({}, oldState);
+      let allReviews = oldState.allReviews.slice(0);
+      allReviews.push(action.review);
+      newState.allReviews = allReviews;
+      return newState;
+    case RECEIVE_REVIEW_ERRORS:
+      newState = merge({}, oldState);
+      newState.errors = action.errors;
+      return newState;
+    case CLEAR_REVIEW_ERRORS:
+      newState = merge({}, oldState);
+      newState.errors = {};
       return newState;
     default:
       return oldState;

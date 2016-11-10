@@ -13,6 +13,7 @@ module.exports = {
   content : {
     position                   : 'relative',
     top                        : '20px',
+    left                       : '0px',
     minWidth                   : '600px',
     maxWidth                   : '600px',
     border                     : '1px solid silver',

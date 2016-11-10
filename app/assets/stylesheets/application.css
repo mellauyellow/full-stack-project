@@ -590,6 +590,10 @@ nav {
   padding: 20px;
 }
 
+.review-form ul {
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
 .review-form form {
   display: flex;
 }
@@ -610,11 +614,13 @@ nav {
   font-size: 12px;
   resize: none;
   padding: 5px;
+  margin-left: 3px;
 }
 
 .review-form-field-header {
   font-weight: 600;
   margin-bottom: 10px;
+  margin-left: 3px;
 }
 
 .review-questions {
@@ -626,6 +632,7 @@ nav {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  margin-left: 3px;
 }
 
 fieldset > h5 {
@@ -653,6 +660,7 @@ fieldset > h5 {
 .review-form-image-section {
   display: flex;
   align-items: baseline;
+  margin-left: 3px;
 }
 
 .review-form-image-section button {
@@ -666,10 +674,23 @@ fieldset > h5 {
   width: 100px;
   height: 30px;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 
-.review-form-image-section button:hover {
-  border: 2px solid #6772E5;
+.review-form-buttons input[type=submit] {
+  background: #6772E5;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px;
+  border: 3px solid white;
+  border-radius: 2px;
+}
+
+.review-form-buttons input[type=submit]:hover {
+  background: #7795F8;
+  border: 3px solid #6772E5;
+  cursor: pointer;
 }
 
 /*NEIGHBORHOOD PAGE CONTENT*/

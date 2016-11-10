@@ -22,12 +22,17 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.upload = this.upload.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let reviewState = merge({}, this.state.review, {images: this.state.photos});
     this.props.postReview(reviewState, this.state.review.neighborhood_id);
+    // this.props.closeModal();
+  }
+
+  componentWillUnmount() {
     this.props.closeModal();
   }
 
@@ -56,6 +61,18 @@ class ReviewForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    if (this.props.errors) {
+      let errorFields = Object.keys(this.props.errors);
+      let errors = errorFields.map((field, idx) => {
+        return (<li key={idx}>Error: review text {this.props.errors[field]}</li>);
+      });
+      return errors;
+    } else {
+      return <li></li>;
+    }
+  }
+
   render() {
     let uploadedImageText;
     if (this.state.photos.length > 1) {
@@ -69,6 +86,9 @@ class ReviewForm extends React.Component {
     return (
       <div className="review-form">
         <h3>Write a review for the {this.props.neighborhood.name} neighborhood</h3>
+        <ul className="errors">
+          {this.renderErrors()}
+        </ul>
         <form onSubmit={this.handleSubmit}>
           <label>
             <h5 className="review-form-field-header">Your review:</h5>

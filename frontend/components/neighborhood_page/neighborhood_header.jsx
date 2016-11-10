@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 import Modal from 'react-modal';
 import ReviewForm from './review_form/review_form';
-import NotLoggedIn from './not_logged_in';
 import SessionFormContainer from '../header/session/session_form_container';
 import ModalStyle from './review_modal_style';
 
@@ -43,6 +42,7 @@ class NeighborhoodHeader extends React.Component {
   onModalClose() {
     this.setState({modalOpen: false});
     ModalStyle.content.opacity = 0;
+    this.props.clearReviewErrors();
   }
 
   onModalOpen() {
@@ -94,6 +94,7 @@ class NeighborhoodHeader extends React.Component {
     if (this.state.loggedIn) {
       if (this.state.reviewForm) {
         component = <ReviewForm
+          errors={this.props.errors}
           currentUser={this.props.currentUser}
           neighborhood={this.props.neighborhood}
           postReview={this.props.postReview}
