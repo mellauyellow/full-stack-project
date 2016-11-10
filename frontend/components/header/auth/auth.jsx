@@ -55,12 +55,22 @@ class Auth extends React.Component {
   render() {
     let component = this.determineComponent();
 
+    let nameStyle = {};
+
+    if (this.props.location === "/") {
+      nameStyle = {
+        color: "silver"
+      };
+    }
+
     if (this.props.currentUser.username) {
       return (
         <div className="auth-logged-in">
           <img src={this.props.currentUser.profile_pic_url}></img>
-          <h4>{this.props.currentUser.first_name} {this.props.currentUser.last_name.slice(0, 1)}.</h4>
-          <button onClick={this.props.logout}>Log Out</button>
+          <div className="logged-in-text">
+            <h4 style={nameStyle}>{this.props.currentUser.first_name} {this.props.currentUser.last_name.slice(0, 1)}.</h4>
+            <button onClick={this.props.logout}>Log Out</button>
+          </div>
         </div>
       );
     } else {

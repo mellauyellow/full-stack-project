@@ -2,8 +2,8 @@ module.exports = {
   overlay : {
     position          : 'fixed',
     display           : 'flex',
-    alignItems       : "center",
-    justifyContent   : "center",
+    alignItems        : "center",
+    justifyContent    : "center",
     top               : 0,
     left              : 0,
     right             : 0,
@@ -12,6 +12,7 @@ module.exports = {
   },
   content : {
     position                   : 'relative',
+    top                        : '20px',
     minWidth                   : '450px',
     maxWidth                   : '450px',
     border                     : '1px solid silver',

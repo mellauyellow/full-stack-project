@@ -101,11 +101,12 @@ nav {
   font-size: 26px;
 }
 
+/*NOT LOGGED IN HEADER*/
+
 .auth-not-logged-in {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 10px;
   width: 240px;
 }
 
@@ -144,6 +145,47 @@ nav {
   border: solid 1px #6772E5;
   background-color: transparent;
   color: #6772E5;
+}
+
+/*LOGGED-IN HEADER*/
+
+.auth-logged-in {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+  width: 240px;
+}
+
+.auth-logged-in > img {
+  height: 35px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  margin: 0px 20px;
+}
+
+.logged-in-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.auth-logged-in h4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.auth-logged-in button {
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+  color: #6772E5;
+  font-weight: 300;
+}
+
+.auth-logged-in button:hover {
+  cursor: pointer;
+  color: #5533ff;
 }
 
 .dropdown {
@@ -204,7 +246,7 @@ nav {
 }
 
 .login-form h2 {
-  margin: 20px 0px;
+  margin: 10px 0px;
   font-size: 32px;
   font-weight: 400;
 }
@@ -231,14 +273,14 @@ nav {
   font-size: 16px;
   border: none;
   padding: 10px;
-  background: #317cff;
+  background: #6772E5;
   color: white;
   border-radius: 3px;
 }
 
 .login-form-signup {
   margin-top: 30px;
-  font-size: 11px;
+  font-size: 12px;
   color: silver;
   display: flex;
   justify-content: center;
@@ -271,7 +313,7 @@ nav {
 }
 
 .signup-form h2 {
-  margin: 20px 0px;
+  margin: 5px 0px;
   font-size: 32px;
   font-weight: 400;
 }
@@ -298,14 +340,14 @@ nav {
   font-size: 16px;
   border: none;
   padding: 10px;
-  background: #317cff;
+  background: #6772E5;
   color: white;
   border-radius: 3px;
 }
 
 .signup-form-login {
   margin-top: 30px;
-  font-size: 11px;
+  font-size: 12px;
   color: silver;
 }
 
@@ -315,42 +357,6 @@ nav {
 
 .signup-form-login a:visited {
   color: silver;
-}
-
-/*LOGGED-IN HEADER*/
-
-.auth-logged-in {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 10px;
-  width: 240px;
-}
-
-.auth-logged-in > img {
-  height: 35px;
-  border: 1px solid silver;
-  border-radius: 3px;
-  margin: 0px 10px;
-}
-
-.auth-logged-in > h4 {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.auth-logged-in > button {
-  margin: 0px 5px;
-  border: none;
-  background-color: white;
-  font-size: 12px;
-  color: #317cff;
-  font-weight: 300;
-}
-
-.auth-logged-in > button:hover {
-  cursor: pointer;
-  color: #5533ff;
 }
 
 /*SPLASH*/

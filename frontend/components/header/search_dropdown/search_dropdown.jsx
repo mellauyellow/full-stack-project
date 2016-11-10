@@ -46,6 +46,12 @@ class SearchDropdown extends React.Component {
       selectStyle = {
         fontSize: 14
       };
+      classStyle = {
+        position: "absolute",
+        top: -15,
+        left: -50,
+        backgroundColor: "white"
+      };
     }
 
     return (
