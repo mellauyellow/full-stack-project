@@ -359,3 +359,10 @@ review3 = Review.create(body: "The Mission used to be full of culture, but over 
                         user_id: 9,
                         neighborhood_id: 1,
                         created_at: Faker::Date.between(2.years.ago, Date.today))
+
+40.times do
+  Review.create(body: Faker::Hipster.paragraph(3), neighborhood_id: Faker::Number.between(1, 87), user_id: Faker::Number.between(1, 15), created_at: Faker::Date.between(2.years.ago, Date.today), good_for_pets: Faker::Boolean.boolean, good_for_bikes: Faker::Boolean.boolean, good_for_singles: Faker::Boolean.boolean, good_for_families: Faker::Boolean.boolean, street_parking: Faker::Boolean.boolean)
+  Review.create(body: Faker::Hipster.paragraph(4), neighborhood_id: Faker::Number.between(1, 87), user_id: Faker::Number.between(1, 15), created_at: Faker::Date.between(2.years.ago, Date.today), good_for_pets: Faker::Boolean.boolean, good_for_bikes: Faker::Boolean.boolean, good_for_singles: Faker::Boolean.boolean, good_for_families: Faker::Boolean.boolean, street_parking: Faker::Boolean.boolean)
+  Review.create(body: Faker::Lorem.paragraph(5), neighborhood_id: Faker::Number.between(1, 87), user_id: Faker::Number.between(1, 15), created_at: Faker::Date.between(2.years.ago, Date.today), good_for_pets: Faker::Boolean.boolean, good_for_bikes: Faker::Boolean.boolean, good_for_singles: Faker::Boolean.boolean, good_for_families: Faker::Boolean.boolean, street_parking: Faker::Boolean.boolean)
+  Review.create(body: Faker::Lorem.paragraph(2), neighborhood_id: Faker::Number.between(1, 87), user_id: Faker::Number.between(1, 15), created_at: Faker::Date.between(2.years.ago, Date.today), good_for_pets: Faker::Boolean.boolean, good_for_bikes: Faker::Boolean.boolean, good_for_singles: Faker::Boolean.boolean, good_for_families: Faker::Boolean.boolean, street_parking: Faker::Boolean.boolean)
+end
