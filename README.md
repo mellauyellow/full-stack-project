@@ -12,12 +12,16 @@ live in.  The backend is built using Ruby on Rails and a PostgreSQL database, wi
 
 ### Neighborhoods and Neighborhood Pages
 
-Neighborhoods are stored in a separate table in the database, with each neighborhood holding a foreign key to a region (San Francisco, Los Angeles, Chicago, or New York).  Each neighborhood has a few key characteristics that help power the neighborhood page and the filter capability:
+Neighborhoods are stored in a separate table in the database, with each neighborhood holding a foreign key to a region (San Francisco, Los Angeles, Chicago, or New York). Each neighborhood has a few key characteristics that help power the neighborhood page and the filter capability:
   + `center_lat` and `center_long` are used to center the map of the neighborhood
   + `walk_score`, `transit_score`, and `cost_of_living` are used as information for searching
 
-Neighborhood pages render many different components:
-  + asdfasdf
+#### NeighborhoodImage
+The `NeighborhoodImage` component is the main image at the top of the page. The design is largely inspired by Airbnb's listing pages. There is a gradient over the image that gradually makes the image darker to make the "View Photos" button stand out on the right.  Clicking this button, or anywhere else on the image, will bring up a React modal that functions as a slideshow of all the images that have been uploaded by users for the given neighborhood, which highlights each user and any captions they may have included for the photo:
+
+![image of image slideshow](docs/screenshots/image_slideshow.png)
+
+
 
 ### Note Rendering and Editing
 
