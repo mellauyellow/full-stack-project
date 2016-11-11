@@ -25,11 +25,24 @@ class ReviewForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.currentReview) {
+      let newReviewState = merge({}, this.state.review);
+      newReviewState.body = this.props.currentReview.body;
+      this.setState({review: newReviewState});
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    let reviewState = merge({}, this.state.review, {images: this.state.photos});
-    this.props.postReview(reviewState, this.state.review.neighborhood_id);
-    // this.props.closeModal();
+    if (this.props.currentReview) {
+      let reviewId = this.props.currentReview.id;
+      let neighborhoodId = this.props.currentReview.neighborhood_id;
+      this.props.updateReview(reviewId, neighborhoodId, this.state.review);
+    } else {
+      let reviewState = merge({}, this.state.review, {images: this.state.photos});
+      this.props.postReview(reviewState, this.state.review.neighborhood_id);
+    }
   }
 
   handleChange(field) {
@@ -78,6 +91,7 @@ class ReviewForm extends React.Component {
     } else {
       uploadedImageText = <h6></h6>;
     }
+    console.log(this.state.body);
 
     return (
       <div className="review-form">

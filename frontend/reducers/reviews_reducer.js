@@ -16,8 +16,9 @@ const ReviewsReducer = (oldState = _nullState, action) => {
     case RECEIVE_REVIEW:
       newState = merge({}, oldState);
       let allReviews = oldState.allReviews.slice(0);
-      allReviews.unshift(action.review);
-      newState.allReviews = allReviews;
+      let newReviews = allReviews.filter(review => (review.id !== action.review.id));
+      newReviews.unshift(action.review);
+      newState.allReviews = newReviews;
       newState.errors = {};
       return newState;
     case RECEIVE_REVIEW_ERRORS:

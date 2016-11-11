@@ -23,7 +23,11 @@ class NeighborhoodPage extends React.Component {
               images={this.props.images}
               currentUser={this.props.currentUser}
               deleteReview={this.props.deleteReview}
-              fetchImages={this.props.fetchImages}/>
+              fetchImages={this.props.fetchImages}
+              clearReviewErrors={this.props.clearReviewErrors}
+              errors={this.props.errors}
+              updateReview={this.props.updateReview}
+              uploadImage={this.props.uploadImage}/>
           </div>
           <NeighborhoodMap currentNeighborhood={this.props.neighborhood} />
         </div>

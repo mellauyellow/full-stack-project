@@ -2,7 +2,16 @@ import React from 'react';
 import NeighborhoodTrendingWords from './neighborhood_trending_words';
 import NeighborhoodReviewItem from './neighborhood_review_item';
 
-const NeighborhoodReviewIndex = ({reviews, neighborhood, images, currentUser, deleteReview, fetchImages}) => {
+const NeighborhoodReviewIndex = ({reviews,
+  neighborhood,
+  images,
+  currentUser,
+  deleteReview,
+  fetchImages,
+  clearReviewErrors,
+  errors,
+  updateReview,
+  uploadImage }) => {
   let imageKeys = Object.keys(images);
   let allReviews;
 
@@ -23,7 +32,11 @@ const NeighborhoodReviewIndex = ({reviews, neighborhood, images, currentUser, de
           images={reviewImages}
           currentUser={currentUser}
           deleteReview={deleteReview}
-          fetchImages={fetchImages}/>
+          fetchImages={fetchImages}
+          clearReviewErrors={clearReviewErrors}
+          errors={errors}
+          updateReview={updateReview}
+          uploadImage={uploadImage}/>
       );
     });
   }

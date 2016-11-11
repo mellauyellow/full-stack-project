@@ -5,6 +5,7 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const CLEAR_REVIEW_ERRORS = "CLEAR_REVIEW_ERRORS";
 export const DELETE_REVIEW = "DELETE_REVIEW";
+export const UPDATE_REVIEW = "UPDATE_REVIEW";
 
 export const fetchReviews = (neighborhoodId) => ({
   type: FETCH_REVIEWS,
@@ -40,4 +41,11 @@ export const deleteReview = (reviewId, neighborhoodId) => ({
   type: DELETE_REVIEW,
   reviewId,
   neighborhoodId
+});
+
+export const updateReview = (reviewId, neighborhoodId, review) => ({
+  type: UPDATE_REVIEW,
+  reviewId,
+  neighborhoodId,
+  review
 });

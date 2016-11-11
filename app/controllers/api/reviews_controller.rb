@@ -24,6 +24,16 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def update
+    @review = Review.find_by_id(params[:id])
+    if @review.update_attributes(review_params)
+      render :show
+    else
+      @errors = @review.errors
+      render :json => @errors, status: 422
+    end
+  end
+
   def destroy
     images = Review.find_by_id(params[:id]).images
 

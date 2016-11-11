@@ -25,3 +25,13 @@ export const deleteReview = (reviewId, neighborhoodId, success, error) => {
     error
   });
 };
+
+export const updateReview = (reviewId, neighborhoodId, review, success, error) => {
+  $.ajax({
+    method: 'PATCH',
+    url: `api/neighborhoods/${neighborhoodId}/reviews/${reviewId}`,
+    data: { review },
+    success,
+    error
+  });
+};
