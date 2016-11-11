@@ -27,6 +27,9 @@ class NeighborhoodHeader extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({loggedIn: Boolean(nextProps.currentUser.id)});
+    if (this.state.modalOpen && Object.keys(nextProps.errors).length === 0) {
+      this.setState({modalOpen: false});
+    }
   }
 
   handleClick(bool) {
@@ -99,7 +102,8 @@ class NeighborhoodHeader extends React.Component {
           neighborhood={this.props.neighborhood}
           postReview={this.props.postReview}
           closeModal={this.onModalClose}
-          uploadImage={this.props.uploadImage}/>;
+          uploadImage={this.props.uploadImage}
+          reviews={this.props.reviews}/>;
       } else {
         component = <div></div>;
       }

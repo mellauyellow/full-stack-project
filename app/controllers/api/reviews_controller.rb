@@ -1,7 +1,7 @@
 class Api::ReviewsController < ApplicationController
   def index
     neighborhood_id = params[:neighborhood_id]
-    @reviews = Review.where("neighborhood_id = ?", neighborhood_id)
+    @reviews = Review.where("neighborhood_id = ?", neighborhood_id).order(created_at: :desc)
   end
 
   def create
@@ -22,6 +22,13 @@ class Api::ReviewsController < ApplicationController
       @errors = @review.errors
       render :json => @errors, status: 422
     end
+  end
+
+  def destroy
+    Review.delete(params[:id])
+    neighborhood_id = params[:neighborhood_id]
+    @reviews = Review.where("neighborhood_id = ?", neighborhood_id).order(created_at: :desc)
+    render :index
   end
 
   private

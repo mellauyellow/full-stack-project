@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
 
     resources :neighborhoods, only: [:show] do
-      resources :reviews, only: [:index, :create]
+      resources :reviews, only: [:index, :create, :destroy]
       resources :images, only: [:index, :create]
     end
   end

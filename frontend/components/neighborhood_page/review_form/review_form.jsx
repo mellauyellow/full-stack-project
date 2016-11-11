@@ -32,10 +32,6 @@ class ReviewForm extends React.Component {
     // this.props.closeModal();
   }
 
-  componentWillUnmount() {
-    this.props.closeModal();
-  }
-
   handleChange(field) {
     return (e) => {
       const newReviewState = merge({}, this.state.review);

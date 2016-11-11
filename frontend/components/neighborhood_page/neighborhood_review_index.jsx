@@ -2,7 +2,7 @@ import React from 'react';
 import NeighborhoodTrendingWords from './neighborhood_trending_words';
 import NeighborhoodReviewItem from './neighborhood_review_item';
 
-const NeighborhoodReviewIndex = ({reviews, name, images}) => {
+const NeighborhoodReviewIndex = ({reviews, name, images, currentUser}) => {
   let imageKeys = Object.keys(images);
   let allReviews;
 
@@ -16,7 +16,7 @@ const NeighborhoodReviewIndex = ({reviews, name, images}) => {
       });
 
       return (
-        <NeighborhoodReviewItem review={review} key={idx} images={reviewImages}/>
+        <NeighborhoodReviewItem review={review} key={idx} images={reviewImages} currentUser={currentUser}/>
       );
     });
   }

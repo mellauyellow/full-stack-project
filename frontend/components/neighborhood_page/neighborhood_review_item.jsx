@@ -13,9 +13,9 @@ const months = {
   9: "October",
   10: "November",
   11: "December"
-}
+};
 
-const NeighborhoodReviewItem = ({review, images}) => {
+const NeighborhoodReviewItem = ({review, images, currentUser}) => {
   let reviewImages;
 
   if (images.length > 0) {
@@ -30,6 +30,17 @@ const NeighborhoodReviewItem = ({review, images}) => {
     });
   }
   let dateObject = new Date(review.created_at);
+
+  let reviewEditText = <div></div>;
+
+  if (review.user.id === currentUser.id) {
+    reviewEditText = (
+      <div className="review-edit-section">
+        <button>Edit review</button>
+        <button>Delete review</button>
+      </div>
+    );
+  }
 
   return (
     <li>
@@ -46,6 +57,7 @@ const NeighborhoodReviewItem = ({review, images}) => {
         <div className="review-images">
           {reviewImages}
         </div>
+        {reviewEditText}
       </div>
     </li>
   );

@@ -253,7 +253,8 @@ review1 = Review.create(body: "I've lived in the Mission for 2 years and I can h
                         good_for_families: false,
                         street_parking: false,
                         user_id: 5,
-                        neighborhood_id: 1)
+                        neighborhood_id: 1,
+                        created_at: Faker::Date.between(2.years.ago, Date.today))
 review2 = Review.create(body: "Noe is the nice compromise for people who are looking to still be walking distance to stores/bars/restaurants, but want a little peace and quiet on their street. It's so dead at night that I can hear my footsteps echo in the streets when I walk. I love that, but you may not.",
                         good_for_pets: true,
                         good_for_bikes: false,
@@ -261,7 +262,8 @@ review2 = Review.create(body: "Noe is the nice compromise for people who are loo
                         good_for_families: true,
                         street_parking: true,
                         user_id: 8,
-                        neighborhood_id: 2)
+                        neighborhood_id: 2,
+                        created_at: Faker::Date.between(2.years.ago, Date.today))
 review3 = Review.create(body: "The Mission used to be full of culture, but over the last few years it's become overrun by rich techies who live their lives through mobile apps. It's gotten so expensive that my family can no longer afford to live here. Good riddance!",
                         good_for_pets: true,
                         good_for_bikes: true,
@@ -269,4 +271,5 @@ review3 = Review.create(body: "The Mission used to be full of culture, but over 
                         good_for_families: false,
                         street_parking: false,
                         user_id: 9,
-                        neighborhood_id: 1)
+                        neighborhood_id: 1,
+                        created_at: Faker::Date.between(2.years.ago, Date.today))

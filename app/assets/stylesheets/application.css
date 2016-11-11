@@ -788,6 +788,20 @@ fieldset > h5 {
   margin-right: 20px;
 }
 
+.review-edit-section button {
+  font-size: 11px;
+  background: transparent;
+  border: 1px solid silver;
+  border-radius: 2px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.review-edit-section button:hover {
+  border: 1px solid #6772E5;
+  cursor: pointer;
+}
+
 /*SEARCH RESULTS*/
 
 .search-filters {
