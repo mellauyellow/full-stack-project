@@ -16,3 +16,12 @@ export const postReview = (review, neighborhoodId, success, error) => {
     error
   });
 };
+
+export const deleteReview = (reviewId, neighborhoodId, success, error) => {
+  $.ajax({
+    method: 'DELETE',
+    url: `api/neighborhoods/${neighborhoodId}/reviews/${reviewId}`,
+    success,
+    error
+  });
+};

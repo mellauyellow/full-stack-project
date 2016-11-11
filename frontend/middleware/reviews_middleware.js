@@ -1,6 +1,12 @@
-import { FETCH_REVIEWS, receiveReviews, POST_REVIEW, receiveReview, RECEIVE_REVIEW, receiveReviewErrors } from '../actions/reviews_actions';
+import { FETCH_REVIEWS,
+         receiveReviews,
+         POST_REVIEW,
+         receiveReview,
+         RECEIVE_REVIEW,
+         receiveReviewErrors,
+         DELETE_REVIEW } from '../actions/reviews_actions';
 import { fetchImages } from '../actions/images_actions';
-import { fetchReviews, postReview } from '../util/reviews_api_util';
+import { fetchReviews, postReview, deleteReview } from '../util/reviews_api_util';
 
 const ReviewsMiddleware = ({getState, dispatch}) => next => action => {
   const receiveReviewsSuccess = (reviews) => dispatch(receiveReviews(reviews));
@@ -17,6 +23,8 @@ const ReviewsMiddleware = ({getState, dispatch}) => next => action => {
     case POST_REVIEW:
       postReview(action.review, action.neighborhoodId, receiveReviewSuccess, errorsCallback);
       return next(action);
+    case DELETE_REVIEW:
+      deleteReview(action.reviewId, action.neighborhoodId, receiveReviewsSuccess);
     default:
       return next(action);
   }

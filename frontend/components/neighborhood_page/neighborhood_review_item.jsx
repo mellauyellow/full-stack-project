@@ -15,7 +15,7 @@ const months = {
   11: "December"
 };
 
-const NeighborhoodReviewItem = ({review, images, currentUser}) => {
+const NeighborhoodReviewItem = ({review, images, currentUser, deleteReview, neighborhood}) => {
   let reviewImages;
 
   if (images.length > 0) {
@@ -31,13 +31,17 @@ const NeighborhoodReviewItem = ({review, images, currentUser}) => {
   }
   let dateObject = new Date(review.created_at);
 
+  const handleDelete = (e) => {
+    deleteReview(review.id, neighborhood.id);
+  };
+
   let reviewEditText = <div></div>;
 
   if (review.user.id === currentUser.id) {
     reviewEditText = (
       <div className="review-edit-section">
         <button>Edit review</button>
-        <button>Delete review</button>
+        <button onClick={handleDelete}>Delete review</button>
       </div>
     );
   }

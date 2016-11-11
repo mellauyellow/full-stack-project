@@ -2,7 +2,7 @@ import React from 'react';
 import NeighborhoodTrendingWords from './neighborhood_trending_words';
 import NeighborhoodReviewItem from './neighborhood_review_item';
 
-const NeighborhoodReviewIndex = ({reviews, name, images, currentUser}) => {
+const NeighborhoodReviewIndex = ({reviews, neighborhood, images, currentUser, deleteReview}) => {
   let imageKeys = Object.keys(images);
   let allReviews;
 
@@ -16,7 +16,13 @@ const NeighborhoodReviewIndex = ({reviews, name, images, currentUser}) => {
       });
 
       return (
-        <NeighborhoodReviewItem review={review} key={idx} images={reviewImages} currentUser={currentUser}/>
+        <NeighborhoodReviewItem
+          neighborhood={neighborhood}
+          review={review}
+          key={idx}
+          images={reviewImages}
+          currentUser={currentUser}
+          deleteReview={deleteReview}/>
       );
     });
   }
@@ -25,7 +31,7 @@ const NeighborhoodReviewIndex = ({reviews, name, images, currentUser}) => {
     <div className="neighborhood-review-index">
       <NeighborhoodTrendingWords reviews={reviews} />
       <div className="review-items">
-        <h4>Recommended reviews for {name}</h4>
+        <h4>Recommended reviews for {neighborhood.name}</h4>
         <h5>{reviews.length} reviews</h5>
         <ul>
           {allReviews}

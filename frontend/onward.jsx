@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import Modal from 'react-modal';
-import { fetchRegion } from './actions/regions_actions';
+import { deleteReview } from './actions/reviews_actions';
 
-window.fetchRegion = fetchRegion;
+window.deleteReview = deleteReview;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
