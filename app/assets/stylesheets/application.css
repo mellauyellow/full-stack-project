@@ -372,12 +372,10 @@ nav {
 
 .background_image {
   background:
-    /* top, transparent red, faked with gradient */
     linear-gradient(
       rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.25)
     ),
-    /* bottom, image */
     url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_2211/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
   background-size: cover;
   height: 1000px;
@@ -412,10 +410,16 @@ nav {
 
 .neighborhood-image {
   height: 400px;
+  /*background:
+    linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.25)
+    );*/
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
 }
+
 
 .neighborhood-image:hover {
   cursor: pointer;

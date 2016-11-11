@@ -42,7 +42,7 @@ class NeighborhoodImage extends React.Component {
         let randomNeighborhoodRep = neighborhoodReps[Math.floor(Math.random() * neighborhoodReps.length)];
 
         let style = {
-          backgroundImage: 'url(' + this.props.images[randomNeighborhoodRep].url + ')'
+          background: 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55)), url(' + this.props.images[randomNeighborhoodRep].url + ') no-repeat center center / cover'
         };
         nImage = (<div className="neighborhood-image" style={style}>
                     <button>
