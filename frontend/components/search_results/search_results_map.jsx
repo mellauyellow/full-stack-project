@@ -49,20 +49,23 @@ class SearchResultsMap extends React.Component {
 
     let marker = new google.maps.Marker({
       position: pos,
-      map: this.map
+      map: this.map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     });
 
     marker.addListener('click', () => (
       this.props.router.push(path)
     ));
 
-    marker.addListener('mouseover', () => (
-      infowindow.open(this.map, marker)
-    ));
+    marker.addListener('mouseover', () => {
+      infowindow.open(this.map, marker);
+      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+    });
 
-    marker.addListener('mouseout', () => (
-      infowindow.close()
-    ));
+    marker.addListener('mouseout', () => {
+      infowindow.close();
+      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+    });
   }
 
   render()  {
