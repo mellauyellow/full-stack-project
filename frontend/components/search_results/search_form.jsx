@@ -78,7 +78,10 @@ class SearchForm extends React.Component {
   render() {
     return (
       <div className="search-filters-button-form">
-        <button onClick={this.toggleSearchForm}>Search Filters</button>
+        <button onClick={this.toggleSearchForm}>
+          <i className="material-icons">search</i>
+          Search Filters
+        </button>
 
         <div className={this.state.searchForm}>
           <form className="search-filters-form">

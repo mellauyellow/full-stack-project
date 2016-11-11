@@ -76,8 +76,8 @@ class NeighborhoodReviewItem extends React.Component {
     if (this.props.review.user.id === this.props.currentUser.id) {
       return (
         <div className="review-edit-section">
-          <button onClick={this.handleEdit}>Edit review</button>
-          <button onClick={this.handleDelete}>Delete review</button>
+          <button onClick={this.handleEdit}>Edit</button>
+          <button onClick={this.handleDelete}>Delete</button>
         </div>
       );
     } else {

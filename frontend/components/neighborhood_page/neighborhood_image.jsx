@@ -45,7 +45,10 @@ class NeighborhoodImage extends React.Component {
           backgroundImage: 'url(' + this.props.images[randomNeighborhoodRep].url + ')'
         };
         nImage = (<div className="neighborhood-image" style={style}>
-                    <button>View Photos</button>
+                    <button>
+                      <i className="material-icons">photo_camera</i>
+                      View Photos
+                    </button>
                   </div>);
       } else {
         nImage = <div></div>;
