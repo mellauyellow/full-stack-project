@@ -716,7 +716,6 @@ fieldset > h5 {
 
 .all-review-content {
   width: 65%;
-  /*border: solid red 2px;*/
   margin-right: 30px;
 }
 
@@ -725,12 +724,13 @@ fieldset > h5 {
   width: 35%;
   height: 300px;
   margin-bottom: 80px;
+  margin-top: 10px;
 }
 
 .neighborhood-review-index {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .neighborhood-trending-words {
@@ -738,7 +738,6 @@ fieldset > h5 {
 }
 
 .review-items {
-  margin: 20px 0px;
 }
 
 .review-items h4 {

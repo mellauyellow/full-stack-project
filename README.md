@@ -21,6 +21,11 @@ The `NeighborhoodImage` component is the main image at the top of the page. The 
 
 ![image of image slideshow](docs/screenshots/image_slideshow.png)
 
+#### NeighborhoodHeader
+The `NeighborhoodHeader` houses the two buttons that enable a user to add content to the neighborhood page: Reviews and Images. Both buttons pop up modals over the screen to allow the user to take action.  If the user is not logged in, the modal will display the login form before they are allowed to add content.  Upon login, the modal transitions directly to either the `ReviewForm` component within the same modal or the Cloudinary photo upload widget, depending on the button.  More on reviews in the following section.
+
+####
+
 
 
 ### Note Rendering and Editing
