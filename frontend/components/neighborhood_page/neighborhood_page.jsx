@@ -22,7 +22,8 @@ class NeighborhoodPage extends React.Component {
               neighborhood={this.props.neighborhood}
               images={this.props.images}
               currentUser={this.props.currentUser}
-              deleteReview={this.props.deleteReview}/>
+              deleteReview={this.props.deleteReview}
+              fetchImages={this.props.fetchImages}/>
           </div>
           <NeighborhoodMap currentNeighborhood={this.props.neighborhood} />
         </div>

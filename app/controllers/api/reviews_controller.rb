@@ -25,7 +25,14 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy
+    images = Review.find_by_id(params[:id]).images
+
+    images.each do |image|
+      Image.delete(image.id)
+    end
+
     Review.delete(params[:id])
+
     neighborhood_id = params[:neighborhood_id]
     @reviews = Review.where("neighborhood_id = ?", neighborhood_id).order(created_at: :desc)
     render :index

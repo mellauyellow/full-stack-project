@@ -15,7 +15,7 @@ const months = {
   11: "December"
 };
 
-const NeighborhoodReviewItem = ({review, images, currentUser, deleteReview, neighborhood}) => {
+const NeighborhoodReviewItem = ({review, images, currentUser, deleteReview, neighborhood, fetchImages}) => {
   let reviewImages;
 
   if (images.length > 0) {
@@ -33,6 +33,7 @@ const NeighborhoodReviewItem = ({review, images, currentUser, deleteReview, neig
 
   const handleDelete = (e) => {
     deleteReview(review.id, neighborhood.id);
+    fetchImages(neighborhood.id);
   };
 
   let reviewEditText = <div></div>;
