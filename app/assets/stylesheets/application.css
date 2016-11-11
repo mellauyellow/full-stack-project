@@ -470,13 +470,21 @@ nav {
   position: relative;
 }
 
+.slick-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .slick-prev {
   position: absolute;
+  z-index: 1;
   top: 250px;
   left: 0px;
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: transparent;
+  font-size: 5px;
   color: transparent;
   content: ">";
   background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
@@ -493,11 +501,12 @@ nav {
 
 .slick-next {
   position: absolute;
+  z-index: 1;
   top: 250px;
   right: 0px;
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: transparent;
   color: transparent;
   content: ">";
   background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
@@ -529,8 +538,9 @@ nav {
 }
 
 .image-slide {
-  height: 80%;
-  margin: auto auto 20px auto;
+  /*height: 80%;*/
+  max-width: 600px;
+  /*margin: auto auto 20px auto;*/
 }
 
 /*NEIGHBORHOOD HEADER*/
