@@ -1,6 +1,5 @@
 class Image < ActiveRecord::Base
   validates :url, :user_id, presence: true
-  validates :url, uniqueness: true
 
   belongs_to :review,
     class_name: :Review,

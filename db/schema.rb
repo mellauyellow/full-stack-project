@@ -11,24 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108183608) do
+ActiveRecord::Schema.define(version: 20161111051942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
-    t.string   "url",              null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "caption"
-    t.integer  "user_id",          null: false
+    t.integer  "user_id",                               null: false
     t.integer  "review_id"
     t.boolean  "region_rep"
     t.boolean  "neighborhood_rep"
     t.integer  "neighborhood_id"
+    t.string   "url",              default: "test.com", null: false
   end
 
-  add_index "images", ["url"], name: "index_images_on_url", unique: true, using: :btree
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -40,10 +39,12 @@ ActiveRecord::Schema.define(version: 20161108183608) do
     t.integer  "cost_of_living",    null: false
     t.string   "housing_type",      null: false
     t.string   "architecture_type"
+    t.integer  "region_id",         null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.integer  "region_id",         null: false
   end
+
+  add_index "neighborhoods", ["region_id"], name: "index_neighborhoods_on_region_id", using: :btree
 
   create_table "regions", force: :cascade do |t|
     t.string   "name",        null: false

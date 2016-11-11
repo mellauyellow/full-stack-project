@@ -120,7 +120,7 @@ class SearchForm extends React.Component {
             </label>
 
             <label>
-              <h6>Most like:</h6>
+              <h6>Similar to:</h6>
               <div className="search-filters-form-select-region">
                 <select onChange={this.handleRegionChange}>
                   <option value="default">Region</option>

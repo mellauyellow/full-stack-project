@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 class SearchResultsMap extends React.Component {
   constructor(props) {
@@ -66,7 +67,11 @@ class SearchResultsMap extends React.Component {
 
   render()  {
     return (
-      <div className="region-map" id="region-map-container" ref="regionMap"></div>
+      <StickyContainer className="sticky-container">
+        <Sticky stickyClassName="sticky-active" className="sticky-inactive">
+          <div className="region-map" id="region-map-container" ref="regionMap"></div>
+        </Sticky>
+      </StickyContainer>
     );
   }
 }

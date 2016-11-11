@@ -981,10 +981,13 @@ fieldset > h5 {
   margin-right: 20px;
 }
 
+.sticky-container {
+  width: 45%;
+}
+
 .region-map {
   border: 1px solid black;
   height: 500px;
-  width: 45%;
   margin-top: 20px;
 }
 
