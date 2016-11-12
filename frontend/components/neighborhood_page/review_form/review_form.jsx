@@ -91,7 +91,6 @@ class ReviewForm extends React.Component {
     } else {
       uploadedImageText = <h6></h6>;
     }
-    console.log(this.state.body);
 
     return (
       <div className="review-form">
