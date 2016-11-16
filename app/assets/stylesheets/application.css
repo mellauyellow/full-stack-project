@@ -842,22 +842,24 @@ fieldset > h5 {
 .search-filters-button-form button {
   display: flex;
   align-items: center;
-  background-color: white;
-  color: black;
+  background-color: #6772E5;
+  color: white;
   font-size: 12px;
   font-weight: 400;
   padding: 3px 8px;
-  border: 2px solid silver;
+  border: 2px solid white;
   border-radius: 2px;
 }
 
 .search-filters-button-form button:hover {
   border: 2px solid #6772E5;
+  background-color: #7795F8;
   cursor: pointer;
 }
 
 .search-filters-button-form .material-icons {
   margin-right: 3px;
+  color: white;
 }
 
 .hidden {

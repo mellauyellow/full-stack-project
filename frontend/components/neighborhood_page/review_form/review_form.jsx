@@ -92,6 +92,10 @@ class ReviewForm extends React.Component {
       uploadedImageText = <h6></h6>;
     }
 
+    if (this.props.currentReview) {
+      console.log(this.state);
+    }
+
     return (
       <div className="review-form">
         <h3>Write a review for the {this.props.neighborhood.name} neighborhood</h3>
@@ -101,7 +105,7 @@ class ReviewForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <h5 className="review-form-field-header">Your review:</h5>
-            <textarea wrap="soft" value={this.state.body} onChange={this.handleChange("body")} placeholder="Help others learn about the neighborhood."></textarea>
+            <textarea wrap="soft" value={this.state.review.body} onChange={this.handleChange("body")} placeholder="Help others learn about the neighborhood."></textarea>
           </label>
 
           <div className="review-questions">
