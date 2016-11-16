@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary'
 gem 'faker'
 gem 'figaro'
+gem 'newrelic_rpm'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
