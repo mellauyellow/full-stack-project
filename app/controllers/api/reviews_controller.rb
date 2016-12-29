@@ -13,8 +13,10 @@ class Api::ReviewsController < ApplicationController
         image_objects = images.map do |key, image|
           url = image["url"]
           user_id = image["user_id"]
+          caption = image["caption"]
           neighborhood_id = image["neighborhood_id"]
-          @review.images << Image.create(url: url, user_id: user_id, neighborhood_id: neighborhood_id)
+
+          @review.images << Image.create(url: url, user_id: user_id, neighborhood_id: neighborhood_id, caption: caption)
         end
       end
       render :show
