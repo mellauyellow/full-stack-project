@@ -712,6 +712,11 @@ fieldset > h5 {
   cursor: pointer;
 }
 
+.caption-fields {
+  display: flex;
+  flex-direction: column;
+}
+
 /*NEIGHBORHOOD PAGE CONTENT*/
 
 .all-review-content {
@@ -776,7 +781,6 @@ fieldset > h5 {
 }
 
 .review-body h5:first-of-type {
-  color: silver;
   margin-bottom: 10px;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { merge } from 'lodash';
+import { merge, cloneDeep } from 'lodash';
 import ReviewFormItem from './review_form_item';
 import Dropzone from 'react-dropzone';
 
@@ -24,6 +24,7 @@ class ReviewForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.upload = this.upload.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleCaptionChange = this.handleCaptionChange.bind(this);
   }
 
   componentDidMount() {
@@ -51,14 +52,22 @@ class ReviewForm extends React.Component {
   handleChange(field) {
     return (e) => {
       if (field === "caption") {
-        const newImageState = merge({}, this.state.photos[0]);
-        newImageState[field] = e.target.value;
-        this.setState({photos: [newImageState]});
+        // const newImageState = merge({}, this.state.photos[0]);
+        // newImageState[field] = e.target.value;
+        // this.setState({photos: [newImageState]});
       } else {
         const newReviewState = merge({}, this.state.review);
         newReviewState[field] = e.target.value;
         this.setState({review: newReviewState});
       }
+    };
+  }
+
+  handleCaptionChange(idx) {
+    return (e) => {
+      let newImageState = cloneDeep(this.state.photos);
+      newImageState[idx]['caption'] = e.target.value;
+      this.setState({photos: newImageState});
     };
   }
 
@@ -90,6 +99,19 @@ class ReviewForm extends React.Component {
     } else {
       return <li></li>;
     }
+  }
+
+  renderCaptions() {
+    let captions = this.state.photos.map((photo, idx) => {
+      return (
+        <label className="caption-input" key={idx}>
+          <h6>Caption:</h6>
+          <input type="text" value={this.state.photos[idx]['caption']} onChange={this.handleCaptionChange(idx)}></input>
+        </label>
+      );
+    });
+
+    return captions;
   }
 
   render() {
@@ -229,6 +251,7 @@ class ReviewForm extends React.Component {
         </div>
       );
     } else {
+      let captions = this.renderCaptions();
       return (
         <div className="review-form">
           <h3>Write a review for the {this.props.neighborhood.name} neighborhood</h3>
@@ -238,10 +261,9 @@ class ReviewForm extends React.Component {
           </ul>
 
           <form onSubmit={this.handleSubmit}>
-            <label>
-              <h6>Caption:</h6>
-              <input type="text" value={this.state.photos[0]['caption']} onChange={this.handleChange("caption")}></input>
-            </label>
+            <div className="caption-fields">
+              {captions}
+            </div>
             <input type="submit" value="Submit Review"></input>
           </form>
         </div>
