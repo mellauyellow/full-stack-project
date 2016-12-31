@@ -10,11 +10,18 @@ const NeighborhoodImagesSlideshow = ({images}) => {
     let imageKeys = Object.keys(images);
     let allImages = imageKeys.map((key, idx) => {
       let userName = `${images[key].user.first_name} ${images[key].user.last_name.slice(0, 1)}.`;
+      let caption;
+
+      if (images[key].caption.length > 0) {
+        caption = <h5>{'"' + images[key].caption + '"'}</h5>;
+      } else {
+        caption = <div></div>;
+      }
 
       return (
         <div key={idx}>
           <NeighborhoodImagesSlide image={images[key]} />
-          <h5>{'"' + images[key].caption + '"'}</h5>
+          {caption}
           <h6>{userName}</h6>
         </div>
       );
