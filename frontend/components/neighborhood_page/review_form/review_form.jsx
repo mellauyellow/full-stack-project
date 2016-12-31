@@ -1,7 +1,6 @@
 import React from 'react';
 import { merge, cloneDeep } from 'lodash';
 import ReviewFormItem from './review_form_item';
-import Dropzone from 'react-dropzone';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -25,6 +24,7 @@ class ReviewForm extends React.Component {
     this.upload = this.upload.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleCaptionChange = this.handleCaptionChange.bind(this);
+    this.generateCropURL = this.generateCropURL.bind(this);
   }
 
   componentDidMount() {
@@ -51,15 +51,9 @@ class ReviewForm extends React.Component {
 
   handleChange(field) {
     return (e) => {
-      if (field === "caption") {
-        // const newImageState = merge({}, this.state.photos[0]);
-        // newImageState[field] = e.target.value;
-        // this.setState({photos: [newImageState]});
-      } else {
-        const newReviewState = merge({}, this.state.review);
-        newReviewState[field] = e.target.value;
-        this.setState({review: newReviewState});
-      }
+      const newReviewState = merge({}, this.state.review);
+      newReviewState[field] = e.target.value;
+      this.setState({review: newReviewState});
     };
   }
 
@@ -77,10 +71,10 @@ class ReviewForm extends React.Component {
       if (!error) {
         let imageObjects = images.map(photo => {
           return {
-            url: photo.url,
+            url: photo.secure_url,
             user_id: this.state.review.user_id,
             neighborhood_id: this.state.review.neighborhood_id,
-            caption: "trial"
+            caption: ""
           };
         });
         let newPhotos = this.state.photos.concat(imageObjects);
@@ -104,14 +98,23 @@ class ReviewForm extends React.Component {
   renderCaptions() {
     let captions = this.state.photos.map((photo, idx) => {
       return (
-        <label className="caption-input" key={idx}>
-          <h6>Caption:</h6>
-          <input type="text" value={this.state.photos[idx]['caption']} onChange={this.handleCaptionChange(idx)}></input>
-        </label>
+        <div className="caption" key={idx}>
+          <img src={this.generateCropURL(photo.url)}></img>
+          <label className="caption-input">
+            <h6>Description:</h6>
+            <input type="text" value={this.state.photos[idx]['caption']} onChange={this.handleCaptionChange(idx)}></input>
+          </label>
+        </div>
       );
     });
 
     return captions;
+  }
+
+  generateCropURL(url) {
+    let cropString = 'c_thumb,g_center,h_40,w_40/';
+    let sliceIdx = url.indexOf('d/') + 2;
+    return url.slice(0, sliceIdx) + cropString + url.slice(sliceIdx);
   }
 
   render() {
@@ -128,9 +131,6 @@ class ReviewForm extends React.Component {
       submitButtonText = 'Submit Review';
     }
 
-    // if (this.props.currentReview) {
-    //   console.log(this.state);
-    // }
     if (this.state.step === 1) {
       return (
         <div className="review-form">
@@ -260,11 +260,13 @@ class ReviewForm extends React.Component {
             {this.renderErrors()}
           </ul>
 
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className="review-form-step2">
             <div className="caption-fields">
               {captions}
             </div>
-            <input type="submit" value="Submit Review"></input>
+            <div className="review-form-buttons">
+              <input type="submit" value="Submit Review"></input>
+            </div>
           </form>
         </div>
       );

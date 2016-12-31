@@ -704,6 +704,7 @@ fieldset > h5 {
   padding: 8px;
   border: 3px solid white;
   border-radius: 2px;
+  width: 180px;
 }
 
 .review-form-buttons input[type=submit]:hover {
@@ -712,9 +713,38 @@ fieldset > h5 {
   cursor: pointer;
 }
 
+.review-form-step2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.caption img {
+  width: 40px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
 .caption-fields {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.caption-input {
+  width: 90%;
+}
+
+.caption-input input {
+  border: 1px solid silver;
+  font-size: 12px;
+  width: 80%;
 }
 
 /*NEIGHBORHOOD PAGE CONTENT*/
