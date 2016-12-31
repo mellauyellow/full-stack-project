@@ -198,7 +198,7 @@ nav {
   border-radius: 2px;
   overflow: hidden;
   background-color: white;
-  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+  background: url("https://res.cloudinary.com/mellauyellow/image/upload/v1483156718/arrowdown_zxkngr.gif") no-repeat 90% 50%
 }
 
 .dropdown select {
@@ -376,7 +376,7 @@ nav {
       rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.25)
     ),
-    url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_2211/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+    url("https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_2211/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
   background-size: cover;
   height: 1000px;
   color: white;
@@ -496,7 +496,7 @@ nav {
   font-size: 5px;
   color: transparent;
   content: ">";
-  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
+  background-image: url("https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -518,7 +518,7 @@ nav {
   background-color: transparent;
   color: transparent;
   content: ">";
-  background-image: url("http://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
+  background-image: url("https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_104/v1478815532/Next_Arrow.svg_y0ctox.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -921,7 +921,7 @@ fieldset > h5 {
   border-radius: 2px;
   overflow: hidden;
   background-color: white;
-  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+  background: url("https://res.cloudinary.com/mellauyellow/image/upload/v1483156718/arrowdown_zxkngr.gif") no-repeat 90% 50%
 }
 
 .search-filters-form-select select {
@@ -946,7 +946,7 @@ fieldset > h5 {
   border-radius: 2px;
   overflow: hidden;
   background-color: white;
-  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+  background: url("https://res.cloudinary.com/mellauyellow/image/upload/v1483156718/arrowdown_zxkngr.gif") no-repeat 90% 50%
 }
 
 .search-filters-form-select-region select {
@@ -971,7 +971,7 @@ fieldset > h5 {
   border-radius: 2px;
   overflow: hidden;
   background-color: white;
-  background: url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%
+  background: url("https://res.cloudinary.com/mellauyellow/image/upload/v1483156718/arrowdown_zxkngr.gif") no-repeat 90% 50%
 }
 
 .search-filters-form-select-neighborhood select {

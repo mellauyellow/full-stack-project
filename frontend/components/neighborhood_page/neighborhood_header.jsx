@@ -123,7 +123,6 @@ class NeighborhoodHeader extends React.Component {
           <h2>{this.props.neighborhood.name}</h2>
           <div className="neighborhood-header-buttons">
             <button onClick={this.handleClick(true)}>Write a Review</button>
-            <button onClick={this.handleClick(false)}>Add a Photo</button>
           </div>
 
           <Modal
