@@ -7,11 +7,8 @@ class Region extends React.Component {
 
     this.containsNeighborhoodImage = this.containsNeighborhoodImage.bind(this);
     this.neighborhoodsElements = this.neighborhoodsElements.bind(this);
+    this.generateCropURL = this.generateCropURL.bind(this);
   }
-  //
-  // componentDidMount() {
-  //   this.props.fetchRegion(this.props.params.id);
-  // }
 
   containsNeighborhoodImage(neighborhoodId) {
     if (this.props.region.images) {
@@ -31,7 +28,7 @@ class Region extends React.Component {
         let image = this.containsNeighborhoodImage(neighborhood.id);
 
         if (image) {
-          let style = { backgroundImage: 'url(' + image[0].url + ')'};
+          let style = { backgroundImage: 'url(' + this.generateCropURL(image[0].url) + ')'};
           imageItem = <div style={style}></div>;
         }
 
@@ -49,6 +46,12 @@ class Region extends React.Component {
         return <h4>No matches.</h4>;
       }
     }
+  }
+
+  generateCropURL(url) {
+    let cropString = 'c_thumb,g_center,h_100,w_100/';
+    let sliceIdx = url.indexOf('d/') + 2;
+    return url.slice(0, sliceIdx) + cropString + url.slice(sliceIdx);
   }
 
   render() {

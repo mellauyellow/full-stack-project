@@ -31,6 +31,7 @@ class NeighborhoodReviewItem extends React.Component {
     this.reviewEditText = this.reviewEditText.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
+    this.generateCropURL = this.generateCropURL.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -62,7 +63,7 @@ class NeighborhoodReviewItem extends React.Component {
     if (this.props.images.length > 0) {
       let reviewImages = this.props.images.map((image, idx) => {
         let style = {
-          backgroundImage: 'url(' + image.url + ')'
+          backgroundImage: 'url(' + this.generateCropURL(image.url) + ')'
         };
         return (
           <div className="review-image" style={style} key={idx}></div>
@@ -83,6 +84,12 @@ class NeighborhoodReviewItem extends React.Component {
     } else {
       return <div></div>;
     }
+  }
+
+  generateCropURL(url) {
+    let cropString = 'c_thumb,g_center,h_150,w_150/';
+    let sliceIdx = url.indexOf('d/') + 2;
+    return url.slice(0, sliceIdx) + cropString + url.slice(sliceIdx);
   }
 
   render() {
