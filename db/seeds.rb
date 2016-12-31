@@ -22,7 +22,7 @@ user2 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test2", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_100/v1483159131/picture_yz6sjb.jpg')
 
 user3 = User.create(
                     username: "test3",
@@ -31,7 +31,7 @@ user3 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test3", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483159229/stock-photo-confident-full-body-asian-man-standing-isolated-on-white-background-125162762_rmkki1.jpg')
 
 user4 = User.create(
                     username: "test4",
@@ -40,7 +40,7 @@ user4 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test4", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483159445/1_oz9ntx.jpg')
 
 user5 = User.create(
                     username: "test5",
@@ -49,7 +49,7 @@ user5 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test5", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483159566/1_cjnozs.jpg')
 
 user6 = User.create(
                     username: "test6",
@@ -58,7 +58,7 @@ user6 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test6", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face:center,h_100,w_100/v1483159699/pexels-photo-91227_ydvpgv.jpg')
 
 user7 = User.create(
                     username: "test7",
@@ -67,7 +67,7 @@ user7 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test7", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483159768/iStock_000050131992_Medium_h7qklj.jpg')
 
 user8 = User.create(
                     username: "test8",
@@ -76,7 +76,7 @@ user8 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test8", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483160117/2013-07-17-hipster_i6v4o7.jpg')
 
 user9 = User.create(
                     username: "test9",
@@ -85,7 +85,7 @@ user9 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test9", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483160186/10_jabb6v.jpg')
 
 user10 = User.create(
                     username: "test10",
@@ -94,7 +94,7 @@ user10 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test10", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483160276/beautiful-hispanic-young-woman-smiling-outdoors-picture-id483124430_uq4mol.jpg')
 
 user11 = User.create(
                     username: "test11",
@@ -103,7 +103,7 @@ user11 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test11", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483160374/man-holiday-people-face_fodfap.jpg')
 
 user12 = User.create(
                     username: "test12",
@@ -112,7 +112,7 @@ user12 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test12", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483160823/7_qj24q9.jpg')
 
 user13 = User.create(
                     username: "test13",
@@ -121,7 +121,7 @@ user13 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test13", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483161132/young-businesswoman_lusthh.jpg')
 
 user14 = User.create(
                     username: "test14",
@@ -130,7 +130,7 @@ user14 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test14", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483161240/iStock_000004714557Small_bqb7xs.jpg')
 
 user15 = User.create(
                     username: "test15",
@@ -139,7 +139,7 @@ user15 = User.create(
                     first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     zip_code: Faker::Address.zip,
-                    profile_pic_url: Faker::Avatar.image("test15", "50x50"))
+                    profile_pic_url: 'https://res.cloudinary.com/mellauyellow/image/upload/c_thumb,g_face,h_100,w_100/v1483161366/teen_agd6qg.jpg')
 
 region1 = Region.create(name: "San Francisco", state: "CA", center_lat: 37.7575435, center_long: -122.4468722)
 region2 = Region.create(name: "New York", state: "NY", center_lat: 40.741218, center_long: -73.984222)
