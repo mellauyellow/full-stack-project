@@ -35,7 +35,7 @@ class Search extends React.Component {
 
         <div className="region-results-content">
           <Region fetchRegion={this.props.fetchRegion} params={this.props.params} region={this.props.region}/>
-          <SearchResultsMap region={this.props.region} router={this.props.router}/>
+          <SearchResultsMap region={this.props.region} router={this.props.router} fetchRegion={this.props.fetchRegion}/>
         </div>
       </div>
     );

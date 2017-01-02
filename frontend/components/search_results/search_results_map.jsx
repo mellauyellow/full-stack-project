@@ -8,6 +8,21 @@ class SearchResultsMap extends React.Component {
     this.addNeighborhoodMarker = this.addNeighborhoodMarker.bind(this);
   }
 
+  // componentDidMount() {
+  //   if (this.map) {
+  //     this.map.addListener('idle', () => {
+  //       const { south, west, north, east } = this.map.getBounds().toJSON();
+  //       const boundsString = `north=${north}&south=${south}&west=${west}&east=${east}`;
+  //       // const bounds = {
+  //       //   northEast: { lat: north, long: east },
+  //       //   southWest: { lat: south, long: west }
+  //       // };
+  //       // console.log(boundsString);
+  //       this.props.fetchRegion(this.props.region.id, boundsString);
+  //     });
+  //   }
+  // }
+
   componentWillReceiveProps(nextProps) {
     const mapDOMNode = this.refs.regionMap;
 
@@ -31,6 +46,7 @@ class SearchResultsMap extends React.Component {
     }
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+
     if (nextProps.region.neighborhoods) {
       nextProps.region.neighborhoods.forEach(neighborhood => (
         this.addNeighborhoodMarker(neighborhood)

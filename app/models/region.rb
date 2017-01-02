@@ -9,4 +9,5 @@ class Region < ActiveRecord::Base
   has_many :images,
     through: :neighborhoods,
     source: :images
+
 end
