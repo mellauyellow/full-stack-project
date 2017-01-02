@@ -84,12 +84,64 @@ There are four main search filters that exist on the Search Results Page, all of
   + `cost_of_living` is bucketed into four quartiles dependent on the average rent price for a 1 bedroom apartment in that neighborhood.
   + `most_like` (or "similar to") gives the user the ability to filter neighborhoods within the given region based on its similarity to a neighborhood from another region.
 
-All four search filters are stored in the `SearchForm` component's controlled state, and each dropdown has an onChange event handler that dispatches an action with the appropriate filter to the Regions controller to fetch the correct neighborhoods. The filters are passed to the backend via query string, and then parsed in the controller via Active Record query methods.
+All four search filters are stored in the `SearchForm` component's controlled state, and each dropdown has an onChange event handler that dispatches an action with the appropriate filter to the Regions controller to fetch the correct neighborhoods. The onChange event callback is shown below. The filters are passed to the backend via query string, and then parsed in the controller via Active Record query methods.
+
+```javascript
+handleChange(field) {
+  return (e) => {
+    let callback = () => {
+      let stateKeys = Object.keys(this.state.filters);
+      let stateArray = stateKeys.map(key => (`${key}=${this.state.filters[key]}`));
+      let stateString = stateArray.join("&");
+
+      this.props.fetchRegion(this.props.params.id, stateString);
+    };
+
+    let filter = e.target.value;
+    let newState = merge({}, this.state.filters, {[field]: filter});
+    this.setState({filters: newState}, callback);
+  };
+}
+```
 
 ![image of search results](docs/screenshots/search_results.png)
 
 ### Maps
 Maps are featured on both the Search Results Page and the Neighborhoods Page. Regions and Neighborhoods each have a `center_lat` and `center_long` column in their database, which enable the appropriate maps to center on the correct location.
+
+The map on the Search Results Page has event listeners on the map markers for `mouseover`, `mouseout`, and `click` events. Upon `mouseover` and `mouseout`, the appropriate marker changes color and spawns a Google Maps `InfoWindow` object with the name of the neighborhood. A `click` event on the marker navigates the user to the appropriate neighborhood page.
+
+```javascript
+addNeighborhoodMarker(neighborhood) {
+  let pos = new google.maps.LatLng(neighborhood.center_lat, neighborhood.center_long);
+  let path = `/neighborhood/${neighborhood.id}`;
+  let contentString = `<h5>${neighborhood.name}</h5>`;
+
+  let infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  let marker = new google.maps.Marker({
+    position: pos,
+    map: this.map,
+    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+  });
+
+  marker.addListener('click', () => (
+    this.props.router.push(path)
+  ));
+
+  marker.addListener('mouseover', () => {
+    infowindow.open(this.map, marker);
+    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+  });
+
+  marker.addListener('mouseout', () => {
+    infowindow.close();
+    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+  });
+}
+```
 
 #### SearchResultsMap
 The `SearchResultsMap` displays information for the entire region, with markers on each of the neighborhoods in the search results. The component will re-render when the neighborhoods state changes, and will only display relevant data for the neighborhoods in the search results.  Each marker has two event handlers:

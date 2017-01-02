@@ -44,9 +44,7 @@ class SearchForm extends React.Component {
         let stateKeys = Object.keys(this.state.filters);
         let stateArray = stateKeys.map(key => (`${key}=${this.state.filters[key]}`));
         let stateString = stateArray.join("&");
-        // let path = `/search-results/${this.props.region.id}`;
-        // let query = {[field]: filter};
-        // this.props.router.push({pathname: path, query: query});
+
         this.props.fetchRegion(this.props.params.id, stateString);
       };
 
