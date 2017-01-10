@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import NeighborhoodResultItem from './neighborhood_result_item';
 
 class Region extends React.Component {
@@ -29,7 +30,11 @@ class Region extends React.Component {
 
         if (image) {
           let style = { backgroundImage: 'url(' + this.generateCropURL(image[0].url) + ')'};
-          imageItem = <div style={style}></div>;
+          let path = `neighborhood/${neighborhood.id}`;
+          imageItem =
+          (<Link to={path}>
+            <div style={style}></div>
+          </Link>);
         }
 
         return (
