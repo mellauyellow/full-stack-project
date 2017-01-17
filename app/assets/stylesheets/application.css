@@ -89,6 +89,7 @@ nav {
 .logo-and-name {
   display: flex;
   align-items: center;
+  width: 250px;
 }
 
 .logo-and-name > a {
@@ -111,7 +112,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 240px;
+  width: 250px;
 }
 
 .auth-not-logged-in > div {
@@ -157,8 +158,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 10px;
-  width: 240px;
+  width: 250px;
 }
 
 .auth-logged-in > img {
@@ -190,6 +190,14 @@ nav {
 .auth-logged-in button:hover {
   cursor: pointer;
   color: #5533ff;
+}
+
+/*DROPDOWN*/
+
+.regions-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown {
@@ -376,7 +384,7 @@ nav {
       rgba(0, 0, 0, 0.65),
       rgba(0, 0, 0, 0.25)
     ),
-    url("https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_2211/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg");
+    url('https://res.cloudinary.com/mellauyellow/image/upload/c_scale,w_1000/v1478116823/photo-1446052377488-d40ee7263458_aisnky.jpg');
   background-size: cover;
   height: 1000px;
   color: white;
@@ -387,7 +395,6 @@ nav {
 }
 
 .background_image section {
-  width: 950px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -399,11 +406,13 @@ nav {
 .background_image h1 {
   font-weight: 700;
   text-shadow: 0px 0px 1px #000000;
+  text-align: center;
 }
 
 .background_image h2 {
   font-weight: 400;
   text-shadow: 0px 0px 2px #000000;
+  text-align: center;
 }
 
 /*NEIGHBORHOOD PAGE*/
